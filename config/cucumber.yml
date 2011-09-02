@@ -1,0 +1,4 @@
+default: features --strict --tags ~@wip --tags ~@backlog
+quiet: --tags ~@backlog --tags ~@wip --format progress --quiet features
+wip: --tags @wip:3 --wip features
+rewrite: --tags @rewrite,@backlog --tags ~@wip --dry-run 

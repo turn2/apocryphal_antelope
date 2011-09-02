@@ -1,0 +1,8 @@
+.block
+  .detail.huge Create New Winner
+- form_for @winner do |form|
+  != form.error_messages
+  != render :partial => "/winners/inputs", :locals => {:form => form }
+
+  .block.gray
+    .detail!= form.submit "Create Winner"

@@ -1,0 +1,22 @@
+%h2 Schedules
+!= link_to "Back", schedules_path
+#location
+  .event_date= @wholesaler.event_date
+  %br/
+  .wholesaler_name= @wholesaler.wholesaler_name
+  %br/
+  .street= @wholesaler.street_address
+  %br/
+  .city= @wholesaler.city
+  %br/ 
+  .state= @wholesaler.state_name
+  %br/
+  .zip= @wholesaler.postal_code
+#photos
+  - @wholesaler.photos.each do |photo|
+    != image_tag(photo.picture.url(:thumb))
+#testimonials
+  - @wholesaler.testimonials.each do |testimony|
+    .quote= testimony.quote
+    %br/
+    .author= testimony.author

@@ -1,0 +1,6 @@
+%h2 New Wholesaler
+- form_for @wholesaler do |form|
+  != form.error_messages
+  != render :partial => "/wholesalers/inputs", :locals => {:form => form }
+  %p
+    != form.submit "Create wholesaler"

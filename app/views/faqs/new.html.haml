@@ -1,0 +1,9 @@
+.block
+  .detail.huge Create New FAQ
+- form_for @faq do |form|
+  != form.error_messages
+  != render :partial => "/faqs/inputs", :locals => {:form => form }
+  
+  .block.gray
+    .detail!= form.submit "Create FAQ"
+    .subtitle finish editing and submit the new question-answer pair

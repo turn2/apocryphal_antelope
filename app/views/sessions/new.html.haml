@@ -1,0 +1,12 @@
+%h2.session Sign in
+- form_for :session, :url => session_path do |form|
+  .special_form
+    != form.label :email
+    != form.text_field :email
+    != form.label :password
+    != form.password_field :password
+    != form.submit "Sign in"
+
+%p.footnote
+  Can't sign in? Email 
+  != mail_to SUPPORT_EMAIL

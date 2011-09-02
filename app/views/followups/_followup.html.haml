@@ -1,0 +1,14 @@
+- form_for followup do |form|
+  .block.crunched
+    .description!= form.label :description
+    .detail!= form.text_field :description
+  .block.crunched
+    .description!= form.label :due_date
+    .detail!= form.date_select :due_date
+  .clear
+  != form.hidden_field :task_id
+  != form.hidden_field :media_outlet_id
+  .block.gray
+    .detail!= form.submit "Create follow-up"
+    .subtitle Add a new follow-up to this task
+

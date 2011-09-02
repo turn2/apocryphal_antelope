@@ -1,0 +1,5 @@
+.block
+  .description Media Outlet 
+  .detail.huge= @media_outlet.media_outlet_name
+  .subtitle!= link_to "Edit", edit_region_media_outlet_path(@region, @media_outlet)
+!= render :partial => 'media_outlets/media_outlet', :locals => {:media_outlet => @media_outlet }

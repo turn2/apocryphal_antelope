@@ -1,0 +1,14 @@
+.flash {
+  font-family: Georgia, "Times New Roman", Times, Serif;
+  font-size: 1.3em;
+  color: #444;
+  padding: 8px 12px;
+  margin-top: 8px; }
+
+.flash_notice, .flash_success {
+  border: 4px solid #3cc350;
+  background: #eff9f1; }
+
+.flash_warning, .flash_failure {
+  border: 4px solid #c5081a;
+  background: #ffefef; }

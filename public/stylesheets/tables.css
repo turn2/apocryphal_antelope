@@ -1,0 +1,74 @@
+table.resources {
+  margin: 4px auto;
+  width: 100%;
+  border-spacing: 0; }
+  table.resources thead tr, table.resources tfoot tr {
+    background: #ccc;
+    color: #333;
+    font-weight: bold; }
+    table.resources thead tr th, table.resources thead tr td, table.resources tfoot tr th, table.resources tfoot tr td {
+      padding: 6px 8px;
+      text-align: left;
+      font-size: 0.9em; }
+    table.resources thead tr.no_style, table.resources tfoot tr.no_style {
+      background: #fff;
+      border: none; }
+  table.resources.blue thead tr, table.resources.blue tfoot tr {
+    background: #6da4db;
+    color: #fff; }
+  table.resources tbody tr td {
+    border-bottom: 1px solid #ddd; }
+  table.resources tbody tr.light {
+    background: #fff; }
+  table.resources tbody tr.dark {
+    background: #eee; }
+  table.resources tbody tr:hover {
+    background: #cfe1ef; }
+  table.resources tbody tr.urgent td {
+    border-bottom: 1px solid #ffc3c3; }
+    table.resources tbody tr.urgent td a.neutral {
+      color: #a90010;
+      padding: 6px; }
+    table.resources tbody tr.urgent td a.neutral:hover {
+      color: white;
+      text-decoration: none;
+      background: #a90010; }
+  table.resources tbody tr.urgent.dark {
+    background: #ffdfdf; }
+  table.resources tbody tr.urgent.light {
+    background: #ffefef; }
+  table.resources tbody td {
+    padding: 6px; }
+    table.resources tbody td.red {
+      color: white;
+      background: #c5081a; }
+    table.resources tbody td.green {
+      color: white;
+      background: #1fad35; }
+    table.resources tbody td.yellow {
+      color: #333;
+      background: #ffff48; }
+    table.resources tbody td.limit_width {
+      width: 44%; }
+    table.resources tbody td a {
+      font-weight: bold;
+      color: #0056ab;
+      text-decoration: none; }
+    table.resources tbody td a:hover {
+      text-decoration: underline; }
+    table.resources tbody td a.complete {
+      color: #1fad35;
+      padding: 6px; }
+    table.resources tbody td a.complete:hover {
+      color: white;
+      text-decoration: none;
+      background: #1fad35; }
+    table.resources tbody td a.incomplete {
+      color: #a90010;
+      padding: 6px; }
+    table.resources tbody td a.incomplete:hover {
+      color: white;
+      text-decoration: none;
+      background: #a90010; }
+    table.resources tbody td a.neutral:hover {
+      text-decoration: none; }

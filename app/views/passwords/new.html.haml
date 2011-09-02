@@ -1,0 +1,7 @@
+%h2.session Reset your password
+%p We will email you a link to reset your password.
+- form_for :password, :url => passwords_path do |form|
+  .special_form
+    != form.label :email, "Email address"
+    != form.text_field :email
+    != form.submit "Reset Password"

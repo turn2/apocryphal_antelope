@@ -1,0 +1,15 @@
+%h2 Schedules
+%ul#events
+  - @wholesalers.each do |wholesaler|
+    %li.wholesaler[wholesaler] 
+      = wholesaler.event_date
+      %br/
+      != link_to wholesaler.wholesaler_name, schedule_path(wholesaler)
+      %br/
+      = wholesaler.street_address
+      %br/
+      = wholesaler.city
+      %br/ 
+      = wholesaler.state_name
+      %br/
+      = wholesaler.postal_code

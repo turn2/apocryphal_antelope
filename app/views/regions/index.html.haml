@@ -1,0 +1,63 @@
+.block
+  .description Index
+  .detail.huge PR Regions
+  .subtitle!= link_to "new", new_region_path
+
+.block
+  .detail!= link_to "Manage Standalone Media Outlets", media_outlets_path
+  .subtitle Manage Media Outlets that aren't attached to a particular PR Region
+
+%table.resources#regions
+  %thead
+    %tr
+      %th Region
+      %th # Wholesalers
+      %th Earliest Event
+      %th Outstanding Tasks
+      %th
+      %th
+  %tbody
+    - @regions.each do |region|
+      %tr{:class => cycle("light", "dark", :name => "pr_regions")}
+        %td!= link_to region.region_name, region_path(region), :class => "neutral"
+        %td= region.number_of_wholesalers
+        %td= region.earliest_event
+        %td= region.outstanding_tasks
+        %td!= link_to "Edit", edit_region_path(region), :class => "neutral"
+        %td!= link_to "Delete", region_path(region), :method => :delete, :confirm => "Are you sure you want to remove this region?", :class => "incomplete"
+  %tfoot
+    %tr
+      %td Region
+      %td # Wholesalers
+      %td Earliest Event
+      %td Outstanding Tasks
+      %td
+      %td
+
+#urgent
+  .block
+    .detail.huge Urgent Followups
+  %table.resources.followups
+    %thead
+      %tr
+        %th Follow-up
+        %th Media Outlet
+        %th Region
+        %th Due Date
+        %th
+    %tfoot
+      %tr
+        %th Follow-up
+        %th Media Outlet
+        %th Region
+        %th Due Date
+        %th
+    %tbody
+      - @followups.each do |followup|
+        %tr{:class => cycle("light", "dark", :name => "upcoming_followups")}
+          %td= followup.description
+          %td= followup.media_outlet.media_outlet_name
+          %td= followup.region.region_name if followup.region
+          %td= followup.due_date
+          %td!= link_to "&#x2713 Mark Complete", mark_complete_followup_path(followup), :method => :put, :class => "incomplete"
+     

@@ -1,0 +1,113 @@
+%br
+%div[@wholesaler]
+  .block.crunched.massive
+    .description Wholesaler account
+    .detail.huge= @wholesaler.wholesaler_name
+  .block.gray.crunched.huge
+    %h4.section Event Date and Time
+  .clear
+  #contact_info
+
+    .block.crunched.massive
+      .detail!= link_to "Enter Conquest Plumbers", new_dashboard_plumber_path
+      .subtitle
+        Don't forget to check the rebate locator to see if your community offers a rebate for water-efficient products.
+        %a{:href => "http://americanstandard-us.com/water-efficiency/rebate-locator"} http://americanstandard-us.com/water-efficiency/rebate-locator
+    .block.crunched.tiny
+      .description Date
+      .detail= @wholesaler.event_date
+    .block.crunched.tiny
+      .description Start Time
+      .detail= @wholesaler.event_start
+    .block.crunched.tiny
+      .description End Time
+      .detail= @wholesaler.event_end
+      
+    -#
+      .block.crunched
+        .detail!= link_to "Manage Product Sales", new_dashboard_part_path
+        .subtitle Add information for approved parts that were sold at your event
+    .clear
+
+    .block.gray
+      %h4.section Contact Information
+    .block.contact_name.crunched.medium
+      .description Contact Name
+      .detail= @wholesaler.contact_name
+    .block.address.crunched.medium
+      .description Address
+      .detail.street_address= @wholesaler.street_address
+      .detail.city.state.postal_code= "#{@wholesaler.city}, #{@wholesaler.state_name} #{@wholesaler.postal_code}"
+    .block.email.crunched.medium
+      .description Email
+      .detail= @wholesaler.email
+    .block.phone.crunched.medium
+      .description Phone
+      .detail= number_to_phone(@wholesaler.phone, :area_code => true)
+    .clear
+    
+    %br 
+    .block.gray.crunched.huge
+      %h4.section Contact Us
+      .subtitle We'd love to hear from you!
+    .block.crunched.microscopic
+      .detail &nbsp;
+    .block.gray.crunched.huge
+      %h4.section Marketing Materials 
+      .subtitle Generate buzz about your event
+    .clear
+    
+    .block.crunched.huge#contact_manager
+      - form_tag(contact_manager_dashboard_path, :method => :put) do
+        .description!= label_tag :message
+        .detail!= text_area_tag :message, "", :class => "contact_form"
+        %br
+        .detail!= submit_tag "Send Contact"
+    .block.crunched.microscopic
+    .block.crunched.huge
+      .description For your convenience we have created several promotional materials and marketing collateral for your upcoming event.  Please feel free to use these in your building before, during, and after the event.
+      .description
+        %a{:href => "pdfs/wholesaler/trifold_brochure.pdf"} Event Tri-Fold
+        %br
+        %a{:href => "pdfs/wholesaler/statement_stuffer.pdf"} Statement Stuffer
+        %br
+        %a{:href => "pdfs/wholesaler/plumber_postcard_i.pdf"} Plumber Postcard I
+        %br
+        %a{:href => "pdfs/wholesaler/plumber_postcard_ii.pdf"} Plumber Postcard II
+        %br
+        %a{:href => "pdfs/wholesaler/plumber_postcard_iii.pdf"} Plumber Postcard III
+        %br
+        %a{:href => "pdfs/wholesaler/conquest_postcard_i.pdf"} Conquest Postcard I
+        %br
+        %a{:href => "pdfs/wholesaler/conquest_postcard_ii.pdf"} Conquest Postcard II
+        %br
+        %a{:href => "pdfs/wholesaler/conquest_postcard_iii.pdf"} Conquest Postcard III
+        %br
+        %a{:href => "pdfs/wholesaler/plumber_event_entry_form.pdf"} Plumber Entry Forms
+        %br
+        %a{:href => "pdfs/wholesaler/plumber_event_certification_sheet.pdf"} Plumber Event Certification Sheet
+    .clear 
+
+  %br
+  .block.gray.crunched.huge
+    %h4.section Testimonials
+    .subtitle See what people are saying! 
+  .block.crunched.microscopic
+    .detail &nbsp;
+  .block.gray.crunched.huge
+    %h4.section Event Photos
+    .subtitle Click the images to download
+  .clear
+ 
+  .block.crunched.huge
+    #testimonials
+      - @wholesaler.testimonials.each do |testimonial|
+        .block.testimonial[testimonial]
+          .detail.quote= testimonial.quote
+          .description.author= testimonial.author
+  .block.crunched.microscopic
+    .detail &nbsp;
+  .block.crunched.huge
+    #photos
+      - @wholesaler.photos.each do |photo|
+        != render :partial => "photos/wholesaler_thumb", :locals => {:photo => photo }

@@ -1,0 +1,16 @@
+// Cross-Browser Vertical Gradient
+
+=gradient(!color_start, !color_end, !y_start = "left top", !y_end = "left bottom")
+  !gradient = "#{!y_start}, #{!y_end}, from(##{!color_start}), to(##{!color_end})"
+  :background= "-webkit-gradient(linear, #{!gradient})"
+  :background= "-moz-linear-gradient(#{!gradient})"
+  :-ms-filter= "progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr=#FF#{!color_start}, endColorstr=#FF#{!color_end})"
+  :filter= "progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr=#FF#{!color_start}, endColorstr=#FF#{!color_end})"
+
+// Cross Browser Transparency
+=opacity(!opacity)
+  :opacity= !opacity
+  :-moz-opacity= !opacity
+  :-khtml-opacity= !opacity
+  :-ms-filter= "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + round(!opacity*100) + ")"
+  :filter= "alpha(opacity=" + round(!opacity*100) + ")"

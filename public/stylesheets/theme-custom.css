@@ -1,0 +1,189 @@
+body {
+  background: #3366cc url(/images/body-bg.jpg) no-repeat top left;
+  min-height: 600px;
+}
+
+div#pageWrapper {
+  background: transparent none;
+}
+
+/* Header Section */
+div#headerWrapper {
+  background: transparent url(/images/headerWrapper-bg.png) no-repeat top right;
+	overflow: hidden;
+}
+div#headerWrapper div#header {
+	color: #fff;
+}
+div#headerWrapper div#header a {
+	color: #eee;
+	text-decoration: none;
+}
+div#headerWrapper div#header a:hover {
+}
+
+/* Content Section */
+div#contentWrapper {}
+div#contentWrapper div#content {
+  clear:both;
+	overflow: hidden;
+	width: 100%;
+	color: #fff;
+	font-size: 100%;
+	padding: 10px;
+  max-width: 98%;
+}
+div#contentWrapper div#content div#sidebar {
+  float: left;
+  width: 400px;
+	color: #fff;
+  overflow:hidden;	
+	display: inline-block;
+	padding: 0px;
+}
+
+div#contentWrapper div#content div#maincontent {
+  float: left;
+  overflow:hidden;	
+	color: #fff;
+	display: inline-block;
+	margin: 0 20px;
+  width: 520px;
+}
+
+div#contentWrapper div#content a {
+	color: #003366;
+	text-decoration: none;
+}
+div#contentWrapper div#content a:hover {
+	text-decoration: underline;
+}
+
+/* Footer Section */
+div#footerWrapper {}
+div#footerWrapper div#footer {
+	overflow: hidden;
+	color: #fff;
+	text-align: center;
+}
+div#footerWrapper div#footer a {
+	color: #fff;
+	text-decoration: none;
+}
+div#footerWrapper div#footer a:hover {
+	text-decoration: underline;
+}
+
+div#header div#header-top,
+div#header div#header-middle ,
+div#header div#header-bottom  {
+	clear: both;
+	background: transparent none;
+}
+
+div#logo {
+	display: inline-block;
+	float: right;
+  margin-top: 1em;
+  margin-right: 2em;
+}
+div#tagline {
+	display: inline-block;
+	float: left;
+  margin-left: 4em;
+  margin-top: 18em;
+  margin-bottom: 1em;
+}
+
+/* CONTENT STYLES */
+
+input, select, textarea {background: #fff none; }
+table th { vertical-align: middle; font-weight: bold; }
+input .checkbox {background-color: transparent;}
+
+div.prizes img { margin-left: 5px; }
+
+h1 { color: #003366; }
+h3 { color: #003366; }
+
+.hilite { color: #003366; font-weight: bold; }
+.smalltext { font-size: 8px; }
+
+/* MENU STYLES */
+
+div#header div#mainmenu {
+	clear: both;
+  margin: 0;
+  padding: 0;
+	padding-left: 10px;
+  float: left;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  min-width: 1000px;
+}
+
+div#header div#mainmenu li{
+  display: inline;
+}
+
+div#header div#mainmenu li a {
+  float: left;
+  color: white;
+  text-decoration: none;
+  border-right: 1px solid white;
+  line-height: 32px;
+  height: 32px;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 0 10px;
+}
+
+div#header div#mainmenu li a:hover,
+div#header div#mainmenu li a.current {
+	color: #010520;
+  background: transparent url(/images/nav_bar_hover.png) repeat-x top left;
+}
+
+div.tabinit {
+  display: none;
+}
+
+table.follow_the_tour {
+  font-size: 12px;
+  width: 88%;
+  margin: 0 auto;
+}
+
+table.follow_the_tour td {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+table.follow_the_tour tr.odd {
+  background: #4A76CE;
+}
+
+table.follow_the_tour thead tr th {
+  padding-bottom: 12px
+}
+
+.pagination {
+  width: 80%;
+  padding: 12px 10%;
+  text-align: right;
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+}
+
+.pagination a {
+  font-weight: bold;
+}
+
+.pagination .current {
+  color: #ABC;
+}
+

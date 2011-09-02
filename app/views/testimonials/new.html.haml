@@ -1,0 +1,9 @@
+!= render :partial => "/testimonials/header"
+.detail.huge Create New Testimonial
+- form_for @testimonial do |form|
+  != form.error_messages
+  != render :partial => "inputs", :locals => {:form => form }
+
+  .block.gray
+    .detail!= form.submit "Create Testimonial"
+    .subtitle finish editing and submit the new testimonial

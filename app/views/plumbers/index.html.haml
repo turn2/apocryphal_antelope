@@ -1,0 +1,35 @@
+.block
+  .description= @wholesaler.wholesaler_name
+  .detail.huge Plumbers
+
+.block
+  .detail!= link_to "Download", wholesaler_plumbers_path(@wholesaler, :format => "csv")
+  .subtitle Download a .csv file with all of the below plumber information
+
+!= will_paginate @plumbers
+%table.resources#plumbers
+  %thead
+    %tr
+      %th Company Name
+      %th Name
+      %th Email
+      %th Phone
+      %th Address
+      %th City
+      %th State
+      %th Zip
+  %tfoot
+    %tr
+      %td Company Name
+      %td Name
+      %td Email
+      %td Phone
+      %td Address
+      %td City
+      %td State
+      %td Zip
+  %tbody        
+    - @plumbers.each do |plumber|
+      %tr{:class => cycle("light", "dark", :name => "plumber_rows")} 
+        != render :partial => plumber
+!= will_paginate @plumbers

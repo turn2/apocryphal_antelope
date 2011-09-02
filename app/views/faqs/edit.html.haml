@@ -1,0 +1,11 @@
+.block
+  .detail.huge Edit FAQ
+
+- form_for @faq do |form|
+  != form.error_messages
+  != render :partial => "/faqs/inputs", :locals => {:form => form }
+
+  .block.gray
+    .detail!= form.submit "Save Changes to FAQ"
+    .subtitle finish editing and submit the new question-answer pair
+

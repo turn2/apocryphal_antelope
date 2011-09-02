@@ -1,0 +1,9 @@
+.block
+  .detail.huge Create New PR Region
+
+- form_for @region do |form|
+  != render :partial => 'inputs', :locals => {:form => form}
+  
+  .block.gray
+    .detail!= form.submit "Create Region"
+    .subtitle Click to create a new PR Region

@@ -1,0 +1,80 @@
+@import mixins.sass
+
+.block
+  :margin 12px 0
+  :padding 6px 12px
+  &.gray
+    :background #EEE
+    :border 1px solid #DDD
+  &.crunched
+    :width 28%
+    :margin auto
+    :float left
+    
+    &.gargantuan
+      :width 54%
+    &.massive
+      :width 48%
+    &.huge
+      :width 42%
+    &.large
+      :width 36%
+    &.third
+      :width 28%
+    &.medium
+      :width 22%
+    &.small
+      :width 14%
+    &.tiny
+      :width 12%
+    &.microscopic
+      :width 4%
+
+  &.visible
+    :background = !green_one
+    :border = "1px solid #{!green_five}"
+    .description
+      :color = !green_five - #222
+  &.hidden
+    :border = "1px solid #{!red_five}"
+    :background = !red_one
+    .description
+      :color = !red_five - #222
+
+.description
+  :color #7C3100
+  :font-style italic
+  :margin-bottom 3px
+  :font-size 1.1em
+ 
+  &.large
+    :font-size 1.4em
+
+textarea.contact_form
+  :width 100%
+  :height 140px
+
+.subtitle
+  :margin-top 4px
+  :color #777
+  :font-size 0.9em
+  :font-style italic
+
+.detail
+  :font-size 1.2em
+  :color #000
+  &.huge
+    :font-size 1.9em
+    +serif_fonts
+    :font-weight thin
+  &.large
+    :font-size 1.4em
+
+h4.section
+  :font-size 1.6em
+  :font-weight normal
+  :padding 0
+  :margin 0
+  +serif_fonts
+  :color #444
+  :font-style italic

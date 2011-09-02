@@ -1,0 +1,24 @@
+
+%h2.standard!= (@complete ? "Complete " : "Incomplete ") + "Follow-ups"
+!= link_to_if @complete, "View incomplete follow-ups", followups_path, :class => "incomplete" do
+  - link_to "View complete follow-ups", followups_path(:complete => true), :class => "complete"
+
+!= will_paginate @followups
+%table.resources#followups
+  %thead
+    %tr
+      %th follow-up
+      %th wholesaler or media outlet
+      %th due date 
+      %th 
+  %tfoot
+    %tr
+      %td follow-up
+      %td wholesaler or media outlet 
+      %td due date
+      %td
+    %tbody        
+      - @followups.each do |followup|
+        %tr{ followup_row_attributes(followup) }
+          != render :partial => "followup_row", :locals => { :followup => followup, :show_status => false }
+!= will_paginate @followups

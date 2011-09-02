@@ -1,0 +1,15 @@
+.block
+  .description Wholesaler
+  .detail.huge Edit 
+- form_for @wholesaler do |form|
+  != form.error_messages
+  != render :partial => "/wholesalers/inputs", :locals => {:form => form }
+  %p
+    != form.submit "Update wholesaler"
+
+- if @wholesaler.user
+  %h3
+    != link_to "Edit the user account for this wholesaler", edit_wholesaler_user_path(@wholesaler)
+- else
+  %h3
+    != link_to "Create a user account for this wholesaler", new_wholesaler_user_path(@wholesaler)

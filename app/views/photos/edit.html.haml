@@ -1,0 +1,5 @@
+%h2 Edit Photo
+!= link_to image_tag(@photo.picture.url(:medium)), @photo.picture.url(:original)
+!= button_to "Delete Photo", wholesaler_photo_path(@wholesaler, @photo), :method => :delete, :confirm => "Are you sure?"  
+%br/
+!= link_to "Back to photos", wholesaler_photos_path(@wholesaler)

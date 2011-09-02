@@ -1,0 +1,10 @@
+.block
+  .description Edit PR Region
+  .detail.huge= @region.region_name
+
+- form_for @region do |form|
+  != render :partial => 'inputs', :locals => {:form => form}
+  
+  .block.gray
+    .detail!= form.submit "Update Region"
+    .subtitle Click to update the Wholesalers and Media Outlets associated with the region

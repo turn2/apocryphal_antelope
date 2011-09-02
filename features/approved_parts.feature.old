@@ -1,0 +1,16 @@
+Feature: Adding approved parts
+  In order to show positive impact from the program
+  As a wholesaler participating in the event
+  I want to be able to add approved part sales
+
+  Background:
+    Given a wholesaler "Joe's Wholesaler"
+    And I am signed in with the account for the wholesaler "Joe's Wholesaler"
+
+  Scenario: Enter approved sales
+    Given I go to my dashboard
+    And I follow "Manage Product Sales"
+    When I enter information about an approved part sale
+    And I press "Submit"
+    Then I should see "Sales data received. You will receive an entry into the sweepstakes for each approved sale"
+    And the approved part sale should be attributed to the wholesaler "Joe's Wholesaler"

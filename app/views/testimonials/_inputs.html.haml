@@ -1,0 +1,16 @@
+.block.crunched
+  .description!= form.label :quote
+  .detail!= form.text_area  :quote
+.clear
+.block.crunched
+  .description!= form.label :author
+  .detail!= form.text_field :author
+.clear
+.block.crunched
+  .description!= form.label :wholesaler_id, "Wholesaler"
+  .detail!= form.collection_select("wholesaler_id", Wholesaler.all, "id", "wholesaler_name", {:prompt => "---"})
+.clear
+.block.crunched
+  .description!= form.label :visible, "Publish!"
+  .detail!= form.check_box :visible
+.clear

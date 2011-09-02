@@ -1,0 +1,38 @@
+.block
+  .description PR Region
+  .detail.huge= @region.region_name
+
+.block.gray
+  %h4.section Wholesalers
+
+
+%table.resources#followups
+  %thead
+    %tr
+      %th Event Date
+      %th Wholesaler
+      %th Primary Contact
+      %th Phone
+      %th PR Region
+      %th Truck
+  %tfoot
+    %tr
+      %td Event Date
+      %td Wholesaler
+      %td Primary Contact
+      %td Phone
+      %td PR Region
+      %td Truck
+  %tbody 
+    - @wholesalers.each do |wholesaler|
+      %tr.wholesaler[wholesaler]
+        != render :partial => "wholesalers/wholesaler_table_row", :object => wholesaler
+
+.block.gray
+  %h4.section Media Outlets
+
+.block
+  .detail!= link_to("Add new Media Outlet", new_region_media_outlet_path(@region))
+  .subtitle Create a new media outlet for this PR Region
+
+!= render :partial => 'media_outlets/media_outlets_table', :locals => { :media_outlets => @media_outlets }

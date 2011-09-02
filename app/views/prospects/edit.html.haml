@@ -1,0 +1,20 @@
+%h3 Update Subscriber
+- form_for @prospect do |f|
+  != f.error_messages
+  %br/
+  = @prospect.email
+  %br/
+  %br/
+  != f.label :name
+  != f.text_field :name
+  %br/
+  != f.label :opted_in
+  != f.check_box :opted_in
+  %br/
+  - Prospect::VISITOR_TYPES.each do |type|
+    != f.radio_button :visitor_type, type
+    != f.label :visitor_type, type
+    %br/
+  != f.submit
+%p
+  != button_to "Cancel", prospects_path, :method => :get

@@ -1,0 +1,40 @@
+.block
+  .detail.huge Submit New Plumber for Conquesting
+  .subtitle Add the contact information for a new plumber below and we'll invite them to your upcoming event
+
+- form_for(@plumber, :url => dashboard_plumbers_path(@wholesaler)) do |f|
+  != f.error_messages
+
+  .block.gray
+    %h4.section Contact Information
+  .block.crunched
+    .description!= f.label :contact_name, "Name"
+    .detail!= f.text_field :contact_name
+  .block.crunched
+    .description!= f.label :email
+    .detail!= f.text_field :email
+  .block.cruched
+    .description!= f.label :phone
+    .detail!= f.text_field :phone
+  .clear
+
+  .block.gray
+    %h4.section Address
+  .block
+    .description!= f.label :street_address, "Street Address"
+    .detail!= f.text_field :street_address
+  
+  .block.crunched
+    .description!= f.label :city
+    .detail!= f.text_field :city
+  .block.crunched
+    .description!= f.label :state, "State or Province"
+    .detail!= f.select :state, states_and_provinces_for_select
+  .block.crunched
+    .description!= f.label :postal_code
+    .detail!= f.text_field :postal_code 
+  .clear
+
+  .block.gray
+    .detail!= f.submit "Submit"
+    .subtitle Submit plumber information for conquesting

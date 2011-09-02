@@ -1,0 +1,20 @@
+%table.resources#media_outlets
+  %thead
+    %tr
+      %th Media Outlet
+      %th Contact Name
+      %th Close Date
+      %th Release Date
+  %tfoot
+    %tr
+      %td Media Outlet
+      %td Contact Name
+      %td Close Date
+      %td Release Date
+  %tbody
+    - media_outlets.each do |media_outlet|
+      %tr{ media_outlet_row_attributes(media_outlet) }
+        %td.name!= link_to media_outlet.media_outlet_name, media_outlet_smart_path(media_outlet)
+        %td.contact= media_outlet.contact_name
+        %td.close_date= media_outlet.close_date
+        %td.release_date= media_outlet.release_date

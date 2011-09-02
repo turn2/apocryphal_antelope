@@ -1,0 +1,8 @@
+%td!= followup.description
+%td!= followup.task ? followup.task.wholesaler.wholesaler_name : followup.media_outlet.media_outlet_name
+%td= followup.status
+%td= followup.due_date
+- if followup.complete
+  %td!= link_to "Restart", restart_followup_path(followup), :method => :put, :class => "complete"
+- else
+  %td!= link_to "&#x2713 Mark Complete", mark_complete_followup_path(followup), :method => :put, :class => "incomplete"

@@ -1,0 +1,6 @@
+%td= wholesaler_table_row.event_date
+%td!= link_to h(wholesaler_table_row.wholesaler_name), wholesaler_path(wholesaler_table_row), :class => "neutral"
+%td= wholesaler_table_row.contact_name
+%td= wholesaler_table_row.phone
+%td!= link_to h(wholesaler_table_row.region.region_name), region_path(wholesaler_table_row.region), :class => "neutral" if wholesaler_table_row.region
+%td= "#" + wholesaler_table_row.truck.to_s

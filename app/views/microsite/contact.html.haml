@@ -1,0 +1,24 @@
+#sidebar.txtcenter
+  %img{ :src => "images/content-water-people.png", :alt => "water-people" }
+#maincontent
+  != show_flash
+  %h1
+    Contact Us
+  %p
+  %p
+    We'd love to hear from you!
+  - form_tag(send_message_path, :method => :post) do
+    %table
+      %tr
+        %th!= label_tag :name
+        %td!= text_field_tag :name
+      %tr
+        %th!= label_tag :email
+        %td!= text_field_tag :email
+      %tr
+        %th!= label_tag :message
+        %td!= text_area_tag :message
+    %p.detail All fields are required
+    != submit_tag "Submit"
+  %p.txtcenter
+    Thank you!

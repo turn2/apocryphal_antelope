@@ -1,0 +1,8 @@
+- if task.complete
+  %td!= link_to "Restart", restart_task_path(task), :method => :put, :confirm => 'Are you sure you want to restart this task?', :class => "complete"
+- else
+  %td!= check_box_tag "task_ids[]", task.id
+
+%td.title!= link_to task.title, wholesaler_task_path(task.wholesaler, task), :class => "neutral"
+%td.due_date= task.due_date
+%td.wholesaler= task.wholesaler.wholesaler_name

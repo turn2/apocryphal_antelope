@@ -1,0 +1,7 @@
+.block.winner_name.crunched
+  .description!= form.label :winner_name
+  .detail!= form.text_field :winner_name
+.block.wholesaler.crunched
+  .description!= form.label :wholesaler_id, "Wholesaler"
+  .detail!= form.collection_select("wholesaler_id", Wholesaler.by_name, "id", "wholesaler_name", {:prompt => "---"})
+.clear

@@ -1,0 +1,14 @@
+!= render :partial => 'testimonials/header'
+.detail.huge Unpublished Wholesaler Testimonials
+
+%ul{:id => "testimonials"}
+  - @testimonials.each do |testimonial|
+    %li[testimonial]
+      %span.handle
+        .block.gray.crunched.gargantuan{ :class => :visible }
+          .detail!= link_to testimonial.wholesaler.wholesaler_name, wholesaler_path(testimonial.wholesaler)
+          .description.testimonial= testimonial.quote
+          .detail= testimonial.author 
+        .block.crunched
+          != button_to "Add to media tab", approve_testimonials_wholesalers_testimonial_path(testimonial), :method => :put, :confirm => "Add this Testimonial to the media tab?"
+        .clear

@@ -1,0 +1,23 @@
+.fieldWithErrors input[type="text"] {
+  border: 1px solid #c5081a; }
+.fieldWithErrors label {
+  color: #a90010; }
+
+#errorExplanation {
+  padding: 18px 24px 12px 18px;
+  margin-bottom: 24px;
+  background: #ffefef;
+  border: 2px solid #c5081a;
+  color: #a90010;
+  width: 48%; }
+  #errorExplanation h2 {
+    margin: 0;
+    color: #000;
+    font-family: Georgia, "Times New Roman", Times, Serif;
+    font-weight: normal;
+    font-size: 1.8em; }
+  #errorExplanation ul li {
+    color: #333;
+    font-size: 1.2em;
+    margin-top: 4px;
+    font-family: Georgia, "Times New Roman", Times, Serif; }

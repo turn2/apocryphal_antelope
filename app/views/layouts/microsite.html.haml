@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta(http-equiv="content-type" content="text/html;charset=UTF-8")
+    != stylesheet_link_tag "theme-init"
+    != stylesheet_link_tag "theme-common"
+    != stylesheet_link_tag "theme-custom"
+    != stylesheet_link_tag "microsite"
+    != javascript_include_tag "google"
+  %body
+    #pageWrapper
+      #headerWrapper
+        #header
+          #logo
+            %a{ :href => "/", :title => "Home"}
+              %img{ :src => "/images/logo.png", :alt => "Home" }
+          #tagline
+            %img{ :src => "/images/tagline.png", :alt => "Home" }
+          #mainmenu
+            != render :partial => "layouts/nav/microsite"
+      #contentWrapper
+        #content!= yield
+      #footerWrapper
+        #footer

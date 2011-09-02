@@ -1,0 +1,30 @@
+.block
+  .description= @wholesaler.wholesaler_name
+  .detail.huge Parts
+
+.block
+  .detail!= link_to "Download", wholesaler_parts_path(@wholesaler, :format => "csv")
+  .subtitle= "Download a .csv file with all of the submitted parts information for #{@wholesaler.wholesaler_name}"
+
+
+!= will_paginate @parts
+%table.resources#parts
+  %thead
+    %tr
+      %th Product Name
+      %th Quantity
+      %th Total Sale Price
+      %th Part Number
+      %th Date of Sale
+  %tfoot
+    %tr
+      %td Product Name
+      %td Quantity
+      %td Total Sale Price
+      %td Part Number
+      %td Date of Sale
+  %tbody        
+    - @parts.each do |part|
+      %tr{:class => cycle("light", "dark", :name => "part_rows")} 
+        != render :partial => part
+!= will_paginate @part

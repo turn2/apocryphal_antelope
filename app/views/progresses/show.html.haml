@@ -1,0 +1,29 @@
+%h2.standard Wholesaler Progress At a Glance
+!= will_paginate @wholesalers
+%table.resources#wholesalers
+  %thead
+    %tr
+      %th Event Date
+      %th Wholesaler
+      - 10.times do |num| 
+        %th= 10 - num
+      %th Conquest Data
+      %th Not Exported
+  %tbody
+    - @wholesalers.each do |wholesaler|
+      %tr{:class => cycle("light", "dark", :name => "progress_rows")}
+        - event_date_cell_priority(wholesaler.event_date)
+        %td.name!= link_to wholesaler.wholesaler_name, wholesaler_path(wholesaler), :class => "neutral"
+        - 10.times do |num|
+          - task_cell_priority(wholesaler.number_of_incomplete_tasks_per_week[10-num])
+        - conquest_cell_priority(wholesaler.plumbers.size)
+        - not_exported_priority(wholesaler.plumbers.not_exported.size)
+  %tfoot
+    %tr
+      %td Event Date
+      %td Wholesaler
+      - 10.times do |num| 
+        %td= "#{10 - num}"
+      %td Conquest Data
+      %td Not Exported 
+!= will_paginate @wholesalers

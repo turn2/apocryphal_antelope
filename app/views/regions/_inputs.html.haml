@@ -1,0 +1,21 @@
+!= form.error_messages
+
+.block
+  .description!= form.label :region_name, "Name"
+  .detail!= form.text_field :region_name
+
+- if action_name.eql? "edit"
+  .block.gray
+    .detail.huge Wholesalers
+- (@wholesalers).each do |wholesaler|
+  .block
+    != check_box_tag "region[wholesaler_ids[]", wholesaler.id, @region.wholesalers.include?(wholesaler)
+    != label_tag wholesaler.wholesaler_name
+
+- if action_name.eql? "edit"
+  .block.gray
+    .detail.huge Media Outlets
+- (@media_outlets).each do |media_outlet|
+  .block
+    != check_box_tag "region[media_outlet_ids[]", media_outlet.id, @region.media_outlets.include?(media_outlet)
+    != label_tag media_outlet.media_outlet_name

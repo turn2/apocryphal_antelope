@@ -1,0 +1,49 @@
+#sidebar
+  %img{ :src => "images/content-truck.png", :alt => "water-people" }
+  %img{ :src => "images/content-water-people-sm.png", :alt => "water-people" }
+#maincontent
+  %h1
+    Follow the Tour!
+  %p
+  %h2
+    We've made it easy to see where we are, and where we're going to be.
+  %h2
+  %p
+  %p
+    We've got one full-size showroom truck which will be making over 100 stops from March to November 2011. We are traveling the country showcasing water-efficient products to our consumers. Each event will feature live product demonstrations and giveaways.
+  %p
+    The Responsible Bathroom Tour will be an exciting event! We invite you to track the progress of our cross country tour on our Website. Check in weekly for up to the minute details of the tour. 
+.clearlft
+.clearrt
+!= will_paginate @wholesalers
+%br
+%table.follow_the_tour
+  %thead
+    %tr
+      %th
+        Wholesaler 
+      %th
+        Date
+      %th
+        Location
+      %th
+        Address
+      %th
+        Start Time
+      %th
+        End Time
+      %th
+        Map
+  %tbody
+    - @wholesalers.each do |w|
+      %tr{ :class => cycle("odd", "even") }
+        %td= w.wholesaler_name
+        %td= w.event_date
+        %td= "#{w.city}, #{w.state}"
+        %td= w.street_address
+        %td= w.event_start.blank? ? "TBD" : w.event_start 
+        %td= w.event_end.blank? ? "TBD" : w.event_end
+        %td!= link_to "Map", w.google_map_url if w.address_complete?
+
+%br
+!= will_paginate @wholesalers

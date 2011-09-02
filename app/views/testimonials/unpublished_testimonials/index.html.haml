@@ -1,0 +1,17 @@
+!= render :partial => 'testimonials/header'
+.detail.huge Unpublished Standalone Testimonials
+%ul{:id => "testimonials"}
+  != will_paginate @testimonials
+  - @testimonials.each do |testimonial|
+    %li[testimonial]
+      %span.handle
+        .block.gray.crunched.gargantuan{ :class => :hidden }
+          - if testimonial.wholesaler
+            .detail!= link_to testimonial.wholesaler.wholesaler_name, wholesaler_path(testimonial.wholesaler)
+          .description.testimonial= testimonial.quote
+          .detail= testimonial.author 
+        .block.crunched
+          != button_to "Add to media tab", approve_testimonials_unpublished_testimonial_path(testimonial), :method => :put, :confirm => "Add this Testimonial to the main screen?"
+          != button_to "Delete Testimonial", testimonials_unpublished_testimonial_path(testimonial), :confirm => "Are you sure?", :method => :delete
+        .clear
+  != will_paginate @testimonials

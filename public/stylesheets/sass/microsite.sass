@@ -1,0 +1,90 @@
+@import rounded_corners.sass
+@import colors.sass
+@import mixins
+
+p
+  &.detail
+    :font-size 13px
+    :padding 6px 4%
+    :width 88%
+  &.black
+    :color #000
+  &.blue
+    :color #036
+  &.white
+    :color #fff
+  &.bold
+    :font-weight bold
+  &.medium
+    :font-size 14px
+  &.large
+    :font-size 16px
+  &.italicize
+    :font-style italic
+  &.huge
+    :font-size 19px
+  &.two_thirds
+    :max-width 66%
+  &.no_padding
+    :padding-top 0
+    :padding-bottom 0
+  &.no_top_padding
+    :padding-top 0
+  &.no_bottom_padding
+    :padding-bottom 0
+  &.pad_top
+    :padding-top 18px
+  &.title
+    :font-size 19px
+
+
+h1
+  :color #024
+  &.media
+    :padding 12px 4%
+
+#maincontent
+  .flash
+    +sans_fonts
+    :padding 16px
+    +rounded_corners("2px")
+    :margin-bottom 12px
+    :font-size 12px
+  .flash_warning
+    :background= !red_five
+  .flash_notice
+    :background= !red_five
+
+.column
+  :width 24%
+  :float left
+  :padding 16px 2%
+  :margin 18px 0 48px 4%
+
+  &.small
+    :width 20%
+
+  &.large
+    :width 32%
+
+  &.static
+    :width 200px
+  
+  &.contacts
+    :background #39F
+    +rounded_corners("9px")
+  
+  a
+    :font-size 16px
+    :display block
+    :color #036
+    :padding-left 32px
+    :font-weight bold
+
+  .notice
+    :font-size 12px
+    :color #BDF
+    :font-weight bold
+
+body
+  :min-width 966px

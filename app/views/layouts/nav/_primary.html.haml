@@ -1,0 +1,10 @@
+- if signed_in?
+  != render :partial => "layouts/nav/manager" if current_user.has_role? "manager"
+  != render :partial => "layouts/nav/wholesaler" if current_user.has_role? "wholesaler"
+  != link_to "Reset Password", new_password_path
+  != link_to "Sign Out", sign_out_path, :class => "logout"
+- else
+  != link_to "Home", root_path
+  != link_to "FAQs", faqs_path
+  != link_to "Reset Password", new_password_path
+  != link_to "Sign In", sign_in_path, :class => "login"

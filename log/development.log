@@ -1,0 +1,1095 @@
+# Logfile created on Sun Mar 21 15:46:08 +0000 2010  [4;36;1mSQL (1.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to ClearanceCreateUsers (20091116055812)
+Migrating to CreateTaskTemplates (20091117022002)
+Migrating to CreateWholesalers (20091118062359)
+Migrating to CreateTasks (20091119032732)
+Migrating to TaskDueWeekToDueDate (20091122004036)
+Migrating to AddCompleteFlagToTasks (20091125215135)
+Migrating to CreateFollowups (20091126023616)
+Migrating to CreateRegions (20091128164856)
+Migrating to CreateMediaOutlets (20091128181324)
+Migrating to AddRegionIdToMediaOutlet (20091128181745)
+Migrating to AddContactInfoToMediaOutlets (20091128194434)
+Migrating to AddCommentsToMediaOutlets (20091128195040)
+Migrating to CreatePlumbers (20091202024342)
+Migrating to RenameMediaOutletAddressToStreetAddress (20091202232738)
+Migrating to AddOwnerAndContactFieldsToWholesalers (20091203011210)
+Migrating to AddContactFieldsToPlumbers (20091203011211)
+Migrating to AddContactFieldsToMediaOutlets (20091203011212)
+Migrating to AddTitleToTask (20091203071555)
+Migrating to AddDescriptionToTask (20091203073004)
+Migrating to CreateFaqs (20091219215418)
+Migrating to AddPositionToFaqs (20091220011412)
+Migrating to RemoveLinkFromFaq (20091220171347)
+Migrating to CreateTestimonials (20091223180959)
+Migrating to CreatePhotos (20091228232837)
+Migrating to AddAttachmentsDataToPhoto (20091228232941)
+Migrating to CreateWaterSavings (20100124190902)
+Migrating to CreateProspects (20100124210226)
+Migrating to WholesalerBelongsToRegion (20100126052332)
+Migrating to AddMediaTypeToMediaOutlet (20100129051012)
+Migrating to AddFollowupsToMediaOutlets (20100129054549)
+Migrating to RemoveEndDateAndEndWeek (20100129063453)
+Migrating to AddWholesalerToPlumber (20100130212124)
+Migrating to AddWholesalerToUser (20100130213338)
+Migrating to AddRoleToUser (20100130213754)
+Migrating to CreateParts (20100131180954)
+Migrating to AddCompletedCertificationSheetToWholesaler (20100206181634)
+Migrating to AddExportedToPlumbers (20100207203821)
+Migrating to AddUrgentToFollowups (20100214212959)
+Migrating to AddDueDateToFollowups (20100224014656)
+Migrating to RemoveUrgentFromFollowups (20100226011644)
+Migrating to AddAsRepInfoToWholesaler (20100305024355)
+Migrating to AddStartAndEndTimesToWholesaler (20100320224213)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mALTER TABLE "wholesalers" ADD "event_start" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "wholesalers" ADD "event_end" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100320224213')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("faqs")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("followups")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("media_outlets")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("parts")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("photos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("plumbers")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("prospects")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("regions")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("task_templates")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tasks")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("testimonials")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_remember_token')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_confirmation_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("water_savings")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("wholesalers")[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to ClearanceCreateUsers (20091116055812)
+Migrating to CreateTaskTemplates (20091117022002)
+Migrating to CreateWholesalers (20091118062359)
+Migrating to CreateTasks (20091119032732)
+Migrating to TaskDueWeekToDueDate (20091122004036)
+Migrating to AddCompleteFlagToTasks (20091125215135)
+Migrating to CreateFollowups (20091126023616)
+Migrating to CreateRegions (20091128164856)
+Migrating to CreateMediaOutlets (20091128181324)
+Migrating to AddRegionIdToMediaOutlet (20091128181745)
+Migrating to AddContactInfoToMediaOutlets (20091128194434)
+Migrating to AddCommentsToMediaOutlets (20091128195040)
+Migrating to CreatePlumbers (20091202024342)
+Migrating to RenameMediaOutletAddressToStreetAddress (20091202232738)
+Migrating to AddOwnerAndContactFieldsToWholesalers (20091203011210)
+Migrating to AddContactFieldsToPlumbers (20091203011211)
+Migrating to AddContactFieldsToMediaOutlets (20091203011212)
+Migrating to AddTitleToTask (20091203071555)
+Migrating to AddDescriptionToTask (20091203073004)
+Migrating to CreateFaqs (20091219215418)
+Migrating to AddPositionToFaqs (20091220011412)
+Migrating to RemoveLinkFromFaq (20091220171347)
+Migrating to CreateTestimonials (20091223180959)
+Migrating to CreatePhotos (20091228232837)
+Migrating to AddAttachmentsDataToPhoto (20091228232941)
+Migrating to CreateWaterSavings (20100124190902)
+Migrating to CreateProspects (20100124210226)
+Migrating to WholesalerBelongsToRegion (20100126052332)
+Migrating to AddMediaTypeToMediaOutlet (20100129051012)
+Migrating to AddFollowupsToMediaOutlets (20100129054549)
+Migrating to RemoveEndDateAndEndWeek (20100129063453)
+Migrating to AddWholesalerToPlumber (20100130212124)
+Migrating to AddWholesalerToUser (20100130213338)
+Migrating to AddRoleToUser (20100130213754)
+Migrating to CreateParts (20100131180954)
+Migrating to AddCompletedCertificationSheetToWholesaler (20100206181634)
+Migrating to AddExportedToPlumbers (20100207203821)
+Migrating to AddUrgentToFollowups (20100214212959)
+Migrating to AddDueDateToFollowups (20100224014656)
+Migrating to RemoveUrgentFromFollowups (20100226011644)
+Migrating to AddAsRepInfoToWholesaler (20100305024355)
+Migrating to AddStartAndEndTimesToWholesaler (20100320224213)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("faqs")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("followups")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("media_outlets")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("parts")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("photos")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("plumbers")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("prospects")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("regions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("task_templates")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tasks")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("testimonials")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_remember_token')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_confirmation_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("water_savings")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("wholesalers")[0m
+  [4;36;1mSQL (142.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to ClearanceCreateUsers (20091116055812)
+Migrating to CreateTaskTemplates (20091117022002)
+Migrating to CreateWholesalers (20091118062359)
+Migrating to CreateTasks (20091119032732)
+Migrating to TaskDueWeekToDueDate (20091122004036)
+Migrating to AddCompleteFlagToTasks (20091125215135)
+Migrating to CreateFollowups (20091126023616)
+Migrating to CreateRegions (20091128164856)
+Migrating to CreateMediaOutlets (20091128181324)
+Migrating to AddRegionIdToMediaOutlet (20091128181745)
+Migrating to AddContactInfoToMediaOutlets (20091128194434)
+Migrating to AddCommentsToMediaOutlets (20091128195040)
+Migrating to CreatePlumbers (20091202024342)
+Migrating to RenameMediaOutletAddressToStreetAddress (20091202232738)
+Migrating to AddOwnerAndContactFieldsToWholesalers (20091203011210)
+Migrating to AddContactFieldsToPlumbers (20091203011211)
+Migrating to AddContactFieldsToMediaOutlets (20091203011212)
+Migrating to AddTitleToTask (20091203071555)
+Migrating to AddDescriptionToTask (20091203073004)
+Migrating to CreateFaqs (20091219215418)
+Migrating to AddPositionToFaqs (20091220011412)
+Migrating to RemoveLinkFromFaq (20091220171347)
+Migrating to CreateTestimonials (20091223180959)
+Migrating to CreatePhotos (20091228232837)
+Migrating to AddAttachmentsDataToPhoto (20091228232941)
+Migrating to CreateWaterSavings (20100124190902)
+Migrating to CreateProspects (20100124210226)
+Migrating to WholesalerBelongsToRegion (20100126052332)
+Migrating to AddMediaTypeToMediaOutlet (20100129051012)
+Migrating to AddFollowupsToMediaOutlets (20100129054549)
+Migrating to RemoveEndDateAndEndWeek (20100129063453)
+Migrating to AddWholesalerToPlumber (20100130212124)
+Migrating to AddWholesalerToUser (20100130213338)
+Migrating to AddRoleToUser (20100130213754)
+Migrating to CreateParts (20100131180954)
+Migrating to AddCompletedCertificationSheetToWholesaler (20100206181634)
+Migrating to AddExportedToPlumbers (20100207203821)
+Migrating to AddUrgentToFollowups (20100214212959)
+Migrating to AddDueDateToFollowups (20100224014656)
+Migrating to RemoveUrgentFromFollowups (20100226011644)
+Migrating to AddAsRepInfoToWholesaler (20100305024355)
+Migrating to AddStartAndEndTimesToWholesaler (20100320224213)
+Migrating to AddVisibleAndOrderToTestimonials (20100331200604)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (547.8ms)[0m   [0mALTER TABLE "testimonials" ADD "visible" boolean DEFAULT 'f'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "testimonials" ADD "position" integer[0m
+  [4;35;1mTestimonial Load (0.2ms)[0m   [0mSELECT * FROM "testimonials" ORDER BY position[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100331200604')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (92.4ms)[0m   [0;1mPRAGMA index_list("faqs")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("followups")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("media_outlets")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("parts")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("photos")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("plumbers")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("prospects")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("regions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("task_templates")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tasks")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("testimonials")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_remember_token')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_confirmation_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("water_savings")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("wholesalers")[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to ClearanceCreateUsers (20091116055812)
+Migrating to CreateTaskTemplates (20091117022002)
+Migrating to CreateWholesalers (20091118062359)
+Migrating to CreateTasks (20091119032732)
+Migrating to TaskDueWeekToDueDate (20091122004036)
+Migrating to AddCompleteFlagToTasks (20091125215135)
+Migrating to CreateFollowups (20091126023616)
+Migrating to CreateRegions (20091128164856)
+Migrating to CreateMediaOutlets (20091128181324)
+Migrating to AddRegionIdToMediaOutlet (20091128181745)
+Migrating to AddContactInfoToMediaOutlets (20091128194434)
+Migrating to AddCommentsToMediaOutlets (20091128195040)
+Migrating to CreatePlumbers (20091202024342)
+Migrating to RenameMediaOutletAddressToStreetAddress (20091202232738)
+Migrating to AddOwnerAndContactFieldsToWholesalers (20091203011210)
+Migrating to AddContactFieldsToPlumbers (20091203011211)
+Migrating to AddContactFieldsToMediaOutlets (20091203011212)
+Migrating to AddTitleToTask (20091203071555)
+Migrating to AddDescriptionToTask (20091203073004)
+Migrating to CreateFaqs (20091219215418)
+Migrating to AddPositionToFaqs (20091220011412)
+Migrating to RemoveLinkFromFaq (20091220171347)
+Migrating to CreateTestimonials (20091223180959)
+Migrating to CreatePhotos (20091228232837)
+Migrating to AddAttachmentsDataToPhoto (20091228232941)
+Migrating to CreateWaterSavings (20100124190902)
+Migrating to CreateProspects (20100124210226)
+Migrating to WholesalerBelongsToRegion (20100126052332)
+Migrating to AddMediaTypeToMediaOutlet (20100129051012)
+Migrating to AddFollowupsToMediaOutlets (20100129054549)
+Migrating to RemoveEndDateAndEndWeek (20100129063453)
+Migrating to AddWholesalerToPlumber (20100130212124)
+Migrating to AddWholesalerToUser (20100130213338)
+Migrating to AddRoleToUser (20100130213754)
+Migrating to CreateParts (20100131180954)
+Migrating to AddCompletedCertificationSheetToWholesaler (20100206181634)
+Migrating to AddExportedToPlumbers (20100207203821)
+Migrating to AddUrgentToFollowups (20100214212959)
+Migrating to AddDueDateToFollowups (20100224014656)
+Migrating to RemoveUrgentFromFollowups (20100226011644)
+Migrating to AddAsRepInfoToWholesaler (20100305024355)
+Migrating to AddStartAndEndTimesToWholesaler (20100320224213)
+Migrating to AddVisibleAndOrderToTestimonials (20100331200604)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("faqs")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("followups")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("media_outlets")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("parts")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("photos")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("plumbers")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("prospects")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("regions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("task_templates")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tasks")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("testimonials")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_remember_token')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_confirmation_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("water_savings")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("wholesalers")[0m
+** [Hoptoad] Notifier 2.2.2 ready to catch errors
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'ralph_wholesaler@vfimkt.com') LIMIT 1[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'ralph_wholesaler@vfi.com') LIMIT 1[0m
+** [Hoptoad] Notifier 2.2.2 ready to catch errors
+  [4;36;1mWholesaler Load (0.9ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 6) ORDER BY event_date ASC[0m
+  [4;35;1mWholesaler Update (0.5ms)[0m   [0mUPDATE "wholesalers" SET "state" = 'ON' WHERE "id" = 6[0m
+  [4;36;1mWholesaler Update (0.3ms)[0m   [0;1mUPDATE "wholesalers" SET "state" = 'CA' WHERE "id" = 6[0m
+** [Hoptoad] Notifier 2.2.2 ready to catch errors
+  [4;36;1mWholesaler Load (43.2ms)[0m   [0;1mSELECT * FROM "wholesalers" ORDER BY event_date ASC[0m
+** [Hoptoad] Notifier 2.2.2 ready to catch errors
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'marcf@nextps.com') LIMIT 1[0m
+** [Hoptoad] Notifier 2.2.2 ready to catch errors
+  [4;36;1mUser Load (17.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+** [Hoptoad] Notifier 2.2.2 ready to catch errors
+** [Hoptoad] Notifier 2.4.7 ready to catch errors
+
+
+Processing MicrositeController#index (for 127.0.0.1 at 2011-03-17 19:30:58) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/index
+Rendered layouts/nav/_microsite (3.0ms)
+Completed in 55ms (View: 51, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MicrositeController#media (for 127.0.0.1 at 2011-03-17 19:31:08) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/media
+  [4;36;1mTestimonial Load (51.7ms)[0m   [0;1mSELECT * FROM "testimonials" WHERE ("testimonials"."visible" = 't') ORDER BY position[0m
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 185ms (View: 121, DB: 52) | 200 OK [http://localhost/media]
+
+
+Processing MicrositeController#links (for 127.0.0.1 at 2011-03-17 19:31:10) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/links
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 272ms (View: 269, DB: 0) | 200 OK [http://localhost/links]
+
+
+Processing MicrositeController#contact (for 127.0.0.1 at 2011-03-17 19:31:13) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/contact
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 64ms (View: 61, DB: 0) | 200 OK [http://localhost/contact]
+
+
+Processing MicrositeController#index (for 127.0.0.1 at 2011-03-17 19:31:46) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/index
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MicrositeController#our_goal (for 127.0.0.1 at 2011-03-17 19:31:53) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/our_goal
+Rendered layouts/nav/_microsite (0.4ms)
+Completed in 34ms (View: 31, DB: 0) | 200 OK [http://localhost/our_goal]
+
+
+Processing MicrositeController#follow_the_tour (for 127.0.0.1 at 2011-03-17 19:31:55) [GET]
+  [4;35;1mWholesaler Load (2.1ms)[0m   [0mSELECT * FROM "wholesalers" WHERE (event_date > '2011-03-16') ORDER BY event_date ASC LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/microsite
+Rendering microsite/follow_the_tour
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 28ms (View: 13, DB: 2) | 200 OK [http://localhost/follow_the_tour]
+
+
+Processing MicrositeController#calculator (for 127.0.0.1 at 2011-03-17 19:31:56) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/calculator
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 90ms (View: 87, DB: 0) | 200 OK [http://localhost/calculator]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-03-17 19:31:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/nav/_primary (2.3ms)
+Completed in 51ms (View: 48, DB: 0) | 200 OK [http://localhost/sign_in]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-03-17 19:34:20) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/nav/_primary (0.3ms)
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/sign_in]
+
+
+Processing MicrositeController#index (for 127.0.0.1 at 2011-03-17 21:51:08) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/index
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MicrositeController#our_goal (for 127.0.0.1 at 2011-03-17 21:51:09) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/our_goal
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/our_goal]
+
+
+Processing MicrositeController#follow_the_tour (for 127.0.0.1 at 2011-03-17 21:51:11) [GET]
+  [4;36;1mWholesaler Load (0.4ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE (event_date > '2011-03-16') ORDER BY event_date ASC LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/microsite
+Rendering microsite/follow_the_tour
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://localhost/follow_the_tour]
+
+
+Processing MicrositeController#calculator (for 127.0.0.1 at 2011-03-17 21:51:13) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/calculator
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/calculator]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-03-17 21:51:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/nav/_primary (0.3ms)
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/sign_in]
+
+
+Processing FaqsController#index (for 127.0.0.1 at 2011-03-17 21:51:23) [GET]
+Rendering template within layouts/microsite
+Rendering faqs/index
+  [4;35;1mFaq Load (0.9ms)[0m   [0mSELECT * FROM "faqs" WHERE ("faqs"."visible" = 't') ORDER BY position[0m
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 263ms (View: 254, DB: 1) | 200 OK [http://localhost/faqs]
+
+
+Processing FaqsController#index (for 127.0.0.1 at 2011-03-17 21:51:56) [GET]
+Rendering template within layouts/microsite
+Rendering faqs/index
+  [4;36;1mFaq Load (0.9ms)[0m   [0;1mSELECT * FROM "faqs" WHERE ("faqs"."visible" = 't') ORDER BY position[0m
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/faqs]
+
+
+Processing FaqsController#index (for 127.0.0.1 at 2011-03-17 21:52:03) [GET]
+Rendering template within layouts/microsite
+Rendering faqs/index
+  [4;35;1mFaq Load (0.9ms)[0m   [0mSELECT * FROM "faqs" WHERE ("faqs"."visible" = 't') ORDER BY position[0m
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/faqs]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-03-17 21:52:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/nav/_primary (0.3ms)
+Completed in 84ms (View: 80, DB: 0) | 200 OK [http://localhost/sign_in]
+
+
+Processing FaqsController#index (for 127.0.0.1 at 2011-03-17 21:52:10) [GET]
+Rendering template within layouts/microsite
+Rendering faqs/index
+  [4;36;1mFaq Load (0.9ms)[0m   [0;1mSELECT * FROM "faqs" WHERE ("faqs"."visible" = 't') ORDER BY position[0m
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/faqs]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-03-17 21:52:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/nav/_primary (0.3ms)
+Completed in 88ms (View: 85, DB: 0) | 200 OK [http://localhost/sign_in]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-03-17 21:52:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/nav/_primary (0.3ms)
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/sign_in]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-03-17 21:52:20) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"password"=>"[FILTERED]", "email"=>""}, "action"=>"create", "authenticity_token"=>"cTc1yGwbbawGaeWp2c0PDEHpTPQVhpuo3jNPwhQTsVc=", "controller"=>"sessions"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = '') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new (unauthorized)
+Rendered layouts/nav/_primary (0.3ms)
+Completed in 98ms (View: 5, DB: 0) | 401 Unauthorized [http://localhost/session]
+
+
+Processing MicrositeController#index (for 127.0.0.1 at 2011-03-17 21:52:24) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/index
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing FaqsController#index (for 127.0.0.1 at 2011-03-17 21:54:20) [GET]
+Rendering template within layouts/microsite
+Rendering faqs/index
+  [4;36;1mFaq Load (1.0ms)[0m   [0;1mSELECT * FROM "faqs" WHERE ("faqs"."visible" = 't') ORDER BY position[0m
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://localhost/faqs]
+
+
+Processing MicrositeController#links (for 127.0.0.1 at 2011-03-17 21:54:23) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/links
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/links]
+
+
+Processing FaqsController#index (for 127.0.0.1 at 2011-03-17 21:54:25) [GET]
+Rendering template within layouts/microsite
+Rendering faqs/index
+  [4;35;1mFaq Load (0.9ms)[0m   [0mSELECT * FROM "faqs" WHERE ("faqs"."visible" = 't') ORDER BY position[0m
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 91ms (View: 4, DB: 1) | 200 OK [http://localhost/faqs]
+
+
+Processing MicrositeController#media (for 127.0.0.1 at 2011-03-17 21:54:27) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/media
+  [4;36;1mTestimonial Load (0.9ms)[0m   [0;1mSELECT * FROM "testimonials" WHERE ("testimonials"."visible" = 't') ORDER BY position[0m
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://localhost/media]
+
+
+Processing MicrositeController#follow_the_tour (for 127.0.0.1 at 2011-03-17 21:54:29) [GET]
+  [4;35;1mWholesaler Load (0.4ms)[0m   [0mSELECT * FROM "wholesalers" WHERE (event_date > '2011-03-16') ORDER BY event_date ASC LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/microsite
+Rendering microsite/follow_the_tour
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/follow_the_tour]
+
+
+Processing MicrositeController#our_goal (for 127.0.0.1 at 2011-03-17 21:54:30) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/our_goal
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/our_goal]
+
+
+Processing MicrositeController#index (for 127.0.0.1 at 2011-03-17 21:54:32) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/index
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 85ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MicrositeController#our_goal (for 127.0.0.1 at 2011-03-17 21:54:34) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/our_goal
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/our_goal]
+
+
+Processing FaqsController#index (for 127.0.0.1 at 2011-03-17 21:54:55) [GET]
+Rendering template within layouts/microsite
+Rendering faqs/index
+  [4;36;1mFaq Load (0.9ms)[0m   [0;1mSELECT * FROM "faqs" WHERE ("faqs"."visible" = 't') ORDER BY position[0m
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/faqs]
+
+
+Processing MicrositeController#follow_the_tour (for 127.0.0.1 at 2011-03-17 21:55:48) [GET]
+  [4;35;1mWholesaler Load (0.4ms)[0m   [0mSELECT * FROM "wholesalers" WHERE (event_date > '2011-03-16') ORDER BY event_date ASC LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/microsite
+Rendering microsite/follow_the_tour
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/follow_the_tour]
+
+
+Processing MicrositeController#index (for 127.0.0.1 at 2011-03-17 21:56:06) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/index
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-03-17 21:57:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/nav/_primary (0.3ms)
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/sign_in]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-03-17 21:57:24) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"password"=>"[FILTERED]", "email"=>"slr@blurby.com"}, "action"=>"create", "authenticity_token"=>"cTc1yGwbbawGaeWp2c0PDEHpTPQVhpuo3jNPwhQTsVc=", "controller"=>"sessions"}
+  [4;36;1mUser Load (79.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'slr@blurby.com') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-03-18 02:57:25', "remember_token" = '8d18c196a4a9d84b3f807e61e0bb425c022bb014' WHERE "id" = 10[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '8d18c196a4a9d84b3f807e61e0bb425c022bb014') LIMIT 1[0m
+Redirected to http://localhost:3000/dashboard
+Completed in 264ms (DB: 80) | 302 Found [http://localhost/session]
+
+
+Processing DashboardsController#show (for 127.0.0.1 at 2011-03-17 21:57:25) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '8d18c196a4a9d84b3f807e61e0bb425c022bb014') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboards/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.wholesaler_name) on line #5 of app/views/dashboards/show.html.haml:
+2: %div[@wholesaler]
+3:   .block.crunched.massive
+4:     .description Wholesaler account
+5:     .detail.huge= @wholesaler.wholesaler_name
+6:   .block.gray.crunched.huge
+7:     %h4.section Event Date and Time
+8:   .clear
+
+    app/views/dashboards/show.html.haml:5:in `_run_haml_app47views47dashboards47show46html46haml'
+    haml (2.2.13) [v] lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.13) [v] lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.13) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+    /Library/Ruby/Gems/1.8/gems/hoptoad_notifier-2.4.7/lib/hoptoad_notifier/rack.rb:27:in `call'
+    /Library/Ruby/Gems/1.8/gems/hoptoad_notifier-2.4.7/lib/hoptoad_notifier/user_informer.rb:12:in `call'
+
+Rendered rescues/_trace (59.1ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-03-17 21:59:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '8d18c196a4a9d84b3f807e61e0bb425c022bb014') LIMIT 1[0m
+Rendered layouts/nav/_wholesaler (79.6ms)
+Rendered layouts/nav/_primary (95.7ms)
+Rendered layouts/nav/_wholesaler_greeting (3.1ms)
+Completed in 112ms (View: 108, DB: 0) | 200 OK [http://localhost/sign_in]
+
+
+Processing MicrositeController#our_goal (for 127.0.0.1 at 2011-03-17 21:59:30) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/our_goal
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/our_goal]
+** [Hoptoad] Notifier 2.4.7 ready to catch errors
+
+
+Processing MicrositeController#index (for 127.0.0.1 at 2011-03-20 20:52:35) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/index
+Rendered layouts/nav/_microsite (3.4ms)
+Completed in 70ms (View: 66, DB: 0) | 200 OK [http://localhost/]
+** [Hoptoad] Notifier 2.4.7 ready to catch errors
+
+
+Processing MicrositeController#index (for 127.0.0.1 at 2011-03-20 20:55:49) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/index
+Rendered layouts/nav/_microsite (2.7ms)
+Completed in 36ms (View: 33, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing FaqsController#index (for 127.0.0.1 at 2011-03-20 20:55:51) [GET]
+Rendering template within layouts/microsite
+Rendering faqs/index
+  [4;36;1mFaq Load (155.3ms)[0m   [0;1mSELECT * FROM "faqs" WHERE ("faqs"."visible" = 't') ORDER BY position[0m
+Rendered layouts/nav/_microsite (0.3ms)
+Completed in 193ms (View: 30, DB: 155) | 200 OK [http://localhost/faqs]
+** [Hoptoad] Notifier 2.4.8 ready to catch errors
+
+
+Processing MicrositeController#index (for 50.9.211.207 at 2011-03-22 00:54:06) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/index
+Rendered layouts/nav/_microsite (3.2ms)
+Completed in 54ms (View: 46, DB: 0) | 200 OK [http://173.255.204.86/]
+** [Hoptoad] Notifier 2.4.8 ready to catch errors
+
+
+Processing MicrositeController#index (for 173.221.172.242 at 2011-03-28 13:47:06) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/index
+Rendered layouts/nav/_microsite (3.2ms)
+Completed in 55ms (View: 47, DB: 0) | 200 OK [http://173.255.204.86/]
+
+
+Processing SessionsController#new (for 173.221.172.242 at 2011-03-28 13:47:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/nav/_primary (2.3ms)
+Completed in 91ms (View: 85, DB: 0) | 200 OK [http://173.255.204.86/sign_in]
+
+
+Processing SessionsController#create (for 173.221.172.242 at 2011-03-28 13:47:23) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"password"=>"[FILTERED]", "email"=>"snero@vfimkt.com"}, "action"=>"create", "authenticity_token"=>"NZwy0TBjRVyoqbR4MObl+2FYsNIIf5ZWaVSh12Inz5w=", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'snero@vfimkt.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new (unauthorized)
+Rendered layouts/nav/_primary (0.4ms)
+Completed in 48ms (View: 7, DB: 0) | 401 Unauthorized [http://173.255.204.86/session]
+
+
+Processing SessionsController#create (for 173.221.172.242 at 2011-03-28 13:47:35) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"password"=>"[FILTERED]", "email"=>"snero@vfimkt.com"}, "action"=>"create", "authenticity_token"=>"NZwy0TBjRVyoqbR4MObl+2FYsNIIf5ZWaVSh12Inz5w=", "controller"=>"sessions"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'snero@vfimkt.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new (unauthorized)
+Rendered layouts/nav/_primary (0.3ms)
+Completed in 21ms (View: 5, DB: 0) | 401 Unauthorized [http://173.255.204.86/session]
+
+
+Processing SessionsController#create (for 173.221.172.242 at 2011-03-28 13:52:39) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"password"=>"[FILTERED]", "email"=>"mike@vfi.com"}, "action"=>"create", "authenticity_token"=>"NZwy0TBjRVyoqbR4MObl+2FYsNIIf5ZWaVSh12Inz5w=", "controller"=>"sessions"}
+  [4;36;1mUser Load (8.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'mike@vfi.com') LIMIT 1[0m
+  [4;35;1mUser Update (14.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-03-28 13:52:39', "remember_token" = 'd1be4ca7167fbb642b1f5219c19b7cf9521d51e8' WHERE "id" = 5[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'd1be4ca7167fbb642b1f5219c19b7cf9521d51e8') LIMIT 1[0m
+Redirected to http://173.255.204.86:3000/tasks
+Completed in 157ms (DB: 24) | 302 Found [http://173.255.204.86/session]
+
+
+Processing TaskDashboardController#index (for 173.221.172.242 at 2011-03-28 13:52:40) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'd1be4ca7167fbb642b1f5219c19b7cf9521d51e8') LIMIT 1[0m
+  [4;36;1mTask Load (93.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."complete" = 'f') ORDER BY due_date ASC LIMIT 30 OFFSET 0[0m
+  [4;35;1mTaskTemplate Load (0.4ms)[0m   [0mSELECT * FROM "task_templates" WHERE ("task_templates"."id" IN (6,2,5)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mSELECT count(DISTINCT "tasks".id) AS count_all FROM "tasks" LEFT OUTER JOIN "task_templates" ON "task_templates".id = "tasks".task_template_id WHERE ("tasks"."complete" = 'f') [0m
+Rendering template within layouts/application
+Rendering task_dashboard/index
+Rendered task_dashboard/_form_buttons (1.5ms)
+Rendered task_dashboard/_form_buttons (0.2ms)
+  [4;36;1mWholesaler Load (0.6ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 5) ORDER BY event_date ASC[0m
+Rendered tasks/_task (12.9ms)
+  [4;35;1mWholesaler Load (0.5ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 6) ORDER BY event_date ASC[0m
+Rendered tasks/_task (2.7ms)
+  [4;36;1mWholesaler Load (0.5ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 23) ORDER BY event_date ASC[0m
+Rendered tasks/_task (2.7ms)
+  [4;35;1mWholesaler Load (0.5ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 31) ORDER BY event_date ASC[0m
+Rendered tasks/_task (2.6ms)
+  [4;36;1mWholesaler Load (0.4ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 49) ORDER BY event_date ASC[0m
+Rendered tasks/_task (2.0ms)
+  [4;35;1mWholesaler Load (0.3ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 53) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.8ms)
+  [4;36;1mWholesaler Load (0.4ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.8ms)
+  [4;35;1mWholesaler Load (0.4ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 79) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.8ms)
+  [4;36;1mWholesaler Load (0.4ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 86) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.9ms)
+  [4;35;1mWholesaler Load (0.4ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 102) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.8ms)
+  [4;36;1mWholesaler Load (0.3ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 104) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.8ms)
+  [4;35;1mWholesaler Load (0.4ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 111) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 5) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 6) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 23) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 31) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 49) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 53) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 79) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 86) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 102) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 104) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 111) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 5) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 6) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 23) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 31) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 49) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 53) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.7ms)
+Rendered layouts/nav/_manager (3.7ms)
+Rendered layouts/nav/_primary (9.1ms)
+Completed in 307ms (View: 120, DB: 103) | 200 OK [http://173.255.204.86/tasks]
+
+
+Processing TaskDashboardController#complete (for 173.221.172.242 at 2011-03-28 13:52:48) [PUT]
+  Parameters: {"commit"=>"Mark Complete", "task_ids"=>["121"], "authenticity_token"=>"NZwy0TBjRVyoqbR4MObl+2FYsNIIf5ZWaVSh12Inz5w="}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'd1be4ca7167fbb642b1f5219c19b7cf9521d51e8') LIMIT 1[0m
+  [4;35;1mTask Update (2.0ms)[0m   [0mUPDATE "tasks" SET complete='t' WHERE ("tasks"."id" IN ('121')) [0m
+Redirected to http://173.255.204.86:3000/tasks
+Completed in 25ms (DB: 2) | 302 Found [http://173.255.204.86/tasks/complete]
+
+
+Processing TaskDashboardController#index (for 173.221.172.242 at 2011-03-28 13:52:48) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'd1be4ca7167fbb642b1f5219c19b7cf9521d51e8') LIMIT 1[0m
+  [4;35;1mTask Load (9.1ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."complete" = 'f') ORDER BY due_date ASC LIMIT 30 OFFSET 0[0m
+  [4;36;1mTaskTemplate Load (0.4ms)[0m   [0;1mSELECT * FROM "task_templates" WHERE ("task_templates"."id" IN (6,2,5)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mSELECT count(DISTINCT "tasks".id) AS count_all FROM "tasks" LEFT OUTER JOIN "task_templates" ON "task_templates".id = "tasks".task_template_id WHERE ("tasks"."complete" = 'f') [0m
+Rendering template within layouts/application
+Rendering task_dashboard/index
+Rendered task_dashboard/_form_buttons (0.3ms)
+Rendered task_dashboard/_form_buttons (0.2ms)
+  [4;35;1mWholesaler Load (0.5ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 6) ORDER BY event_date ASC[0m
+Rendered tasks/_task (11.3ms)
+  [4;36;1mWholesaler Load (0.5ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 23) ORDER BY event_date ASC[0m
+Rendered tasks/_task (2.5ms)
+  [4;35;1mWholesaler Load (0.5ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 31) ORDER BY event_date ASC[0m
+Rendered tasks/_task (2.7ms)
+  [4;36;1mWholesaler Load (0.5ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 49) ORDER BY event_date ASC[0m
+Rendered tasks/_task (2.5ms)
+  [4;35;1mWholesaler Load (0.5ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 53) ORDER BY event_date ASC[0m
+Rendered tasks/_task (2.5ms)
+  [4;36;1mWholesaler Load (0.5ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+Rendered tasks/_task (2.6ms)
+  [4;35;1mWholesaler Load (0.4ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 79) ORDER BY event_date ASC[0m
+Rendered tasks/_task (2.4ms)
+  [4;36;1mWholesaler Load (0.4ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 86) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.8ms)
+  [4;35;1mWholesaler Load (0.4ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 102) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.8ms)
+  [4;36;1mWholesaler Load (0.3ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 104) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.8ms)
+  [4;35;1mWholesaler Load (0.4ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 111) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.8ms)
+  [4;36;1mWholesaler Load (0.5ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 5) ORDER BY event_date ASC[0m
+Rendered tasks/_task (2.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 6) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 23) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 31) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 49) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 53) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 79) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 86) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 102) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 104) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 111) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 5) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 6) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 23) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 31) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 49) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 53) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+Rendered tasks/_task (2.0ms)
+Rendered layouts/nav/_manager (0.6ms)
+Rendered layouts/nav/_primary (1.7ms)
+Completed in 192ms (View: 135, DB: 19) | 200 OK [http://173.255.204.86/tasks]
+
+
+Processing TaskDashboardController#complete (for 173.221.172.242 at 2011-03-28 13:52:58) [PUT]
+  Parameters: {"commit"=>"Mark Complete", "task_ids"=>["122"], "authenticity_token"=>"NZwy0TBjRVyoqbR4MObl+2FYsNIIf5ZWaVSh12Inz5w="}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'd1be4ca7167fbb642b1f5219c19b7cf9521d51e8') LIMIT 1[0m
+  [4;36;1mTask Update (1.3ms)[0m   [0;1mUPDATE "tasks" SET complete='t' WHERE ("tasks"."id" IN ('122')) [0m
+Redirected to http://173.255.204.86:3000/tasks
+Completed in 23ms (DB: 2) | 302 Found [http://173.255.204.86/tasks/complete]
+
+
+Processing TaskDashboardController#index (for 173.221.172.242 at 2011-03-28 13:52:59) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'd1be4ca7167fbb642b1f5219c19b7cf9521d51e8') LIMIT 1[0m
+  [4;36;1mTask Load (9.0ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."complete" = 'f') ORDER BY due_date ASC LIMIT 30 OFFSET 0[0m
+  [4;35;1mTaskTemplate Load (0.4ms)[0m   [0mSELECT * FROM "task_templates" WHERE ("task_templates"."id" IN (6,2,5)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mSELECT count(DISTINCT "tasks".id) AS count_all FROM "tasks" LEFT OUTER JOIN "task_templates" ON "task_templates".id = "tasks".task_template_id WHERE ("tasks"."complete" = 'f') [0m
+Rendering template within layouts/application
+Rendering task_dashboard/index
+Rendered task_dashboard/_form_buttons (0.3ms)
+Rendered task_dashboard/_form_buttons (0.2ms)
+  [4;36;1mWholesaler Load (0.5ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 23) ORDER BY event_date ASC[0m
+Rendered tasks/_task (9.5ms)
+  [4;35;1mWholesaler Load (0.4ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 31) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.9ms)
+  [4;36;1mWholesaler Load (0.4ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 49) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.8ms)
+  [4;35;1mWholesaler Load (0.6ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 53) ORDER BY event_date ASC[0m
+Rendered tasks/_task (2.8ms)
+  [4;36;1mWholesaler Load (0.5ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+Rendered tasks/_task (2.5ms)
+  [4;35;1mWholesaler Load (0.6ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 79) ORDER BY event_date ASC[0m
+Rendered tasks/_task (2.6ms)
+  [4;36;1mWholesaler Load (0.4ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 86) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.8ms)
+  [4;35;1mWholesaler Load (0.3ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 102) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.8ms)
+  [4;36;1mWholesaler Load (0.3ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 104) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.8ms)
+  [4;35;1mWholesaler Load (0.3ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 111) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.8ms)
+  [4;36;1mWholesaler Load (0.4ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 5) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.8ms)
+  [4;35;1mWholesaler Load (0.4ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 6) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 23) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 31) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 49) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 53) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 79) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 86) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 102) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 104) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 111) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 5) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 6) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 23) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 31) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 49) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 53) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 79) ORDER BY event_date ASC[0m
+Rendered tasks/_task (1.2ms)
+Rendered layouts/nav/_manager (0.4ms)
+Rendered layouts/nav/_primary (1.2ms)
+Completed in 142ms (View: 84, DB: 18) | 200 OK [http://173.255.204.86/tasks]
+
+
+Processing TasksController#show (for 173.221.172.242 at 2011-03-28 13:53:06) [GET]
+  Parameters: {"id"=>"487", "wholesaler_id"=>"72"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'd1be4ca7167fbb642b1f5219c19b7cf9521d51e8') LIMIT 1[0m
+  [4;35;1mWholesaler Load (0.4ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+  [4;35;1mTask Load (0.4ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 487 AND ("tasks".wholesaler_id = 72)) ORDER BY due_date ASC[0m
+  [4;36;1mTaskTemplate Load (0.2ms)[0m   [0;1mSELECT * FROM "task_templates" WHERE ("task_templates"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering tasks/show
+  [4;35;1mFollowup Load (0.3ms)[0m   [0mSELECT * FROM "followups" WHERE ("followups".task_id = 487) ORDER BY followups.complete, followups.due_date[0m
+Rendered followups/_followup (12.7ms)
+Rendered layouts/nav/_manager (0.5ms)
+Rendered layouts/nav/_primary (1.4ms)
+Completed in 170ms (View: 130, DB: 2) | 200 OK [http://173.255.204.86/wholesalers/72/tasks/487]
+
+
+Processing TasksController#update (for 173.221.172.242 at 2011-03-28 13:53:11) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"NZwy0TBjRVyoqbR4MObl+2FYsNIIf5ZWaVSh12Inz5w=", "id"=>"487", "task"=>{"due_date(1i)"=>"2010", "due_date(2i)"=>"1", "due_date(3i)"=>"29", "complete"=>"1"}, "wholesaler_id"=>"72"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'd1be4ca7167fbb642b1f5219c19b7cf9521d51e8') LIMIT 1[0m
+  [4;35;1mWholesaler Load (0.4ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 487 AND ("tasks".wholesaler_id = 72)) ORDER BY due_date ASC[0m
+  [4;36;1mTaskTemplate Load (0.2ms)[0m   [0;1mSELECT * FROM "task_templates" WHERE ("task_templates"."id" = 5) [0m
+  [4;35;1mTask Update (0.3ms)[0m   [0mUPDATE "tasks" SET "updated_at" = '2011-03-28 13:53:11', "complete" = 't' WHERE "id" = 487[0m
+  [4;36;1mWholesaler Load (0.4ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+Redirected to http://173.255.204.86:3000/wholesalers/72/tasks/487
+Completed in 44ms (DB: 2) | 302 Found [http://173.255.204.86/wholesalers/72/tasks/487]
+
+
+Processing TasksController#show (for 173.221.172.242 at 2011-03-28 13:53:11) [GET]
+  Parameters: {"id"=>"487", "wholesaler_id"=>"72"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'd1be4ca7167fbb642b1f5219c19b7cf9521d51e8') LIMIT 1[0m
+  [4;36;1mWholesaler Load (0.4ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 487 AND ("tasks".wholesaler_id = 72)) ORDER BY due_date ASC[0m
+  [4;35;1mTaskTemplate Load (0.2ms)[0m   [0mSELECT * FROM "task_templates" WHERE ("task_templates"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering tasks/show
+  [4;36;1mFollowup Load (0.2ms)[0m   [0;1mSELECT * FROM "followups" WHERE ("followups".task_id = 487) ORDER BY followups.complete, followups.due_date[0m
+Rendered followups/_followup (8.3ms)
+Rendered layouts/nav/_manager (0.4ms)
+Rendered layouts/nav/_primary (1.2ms)
+Completed in 73ms (View: 37, DB: 1) | 200 OK [http://173.255.204.86/wholesalers/72/tasks/487]
+
+
+Processing FollowupsController#create (for 173.221.172.242 at 2011-03-28 13:53:21) [POST]
+  Parameters: {"commit"=>"Create follow-up", "followup"=>{"task_id"=>"487", "due_date(1i)"=>"2011", "due_date(2i)"=>"3", "due_date(3i)"=>"28", "media_outlet_id"=>"", "description"=>""}, "authenticity_token"=>"NZwy0TBjRVyoqbR4MObl+2FYsNIIf5ZWaVSh12Inz5w="}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'd1be4ca7167fbb642b1f5219c19b7cf9521d51e8') LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template followups/new.erb in view path app/views:vendor/gems/clearance-0.8.3/app/views):
+  haml (2.2.13) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+  /usr/lib/ruby/gems/1.8/gems/hoptoad_notifier-2.4.8/lib/hoptoad_notifier/rack.rb:27:in `call'
+  /usr/lib/ruby/gems/1.8/gems/hoptoad_notifier-2.4.8/lib/hoptoad_notifier/user_informer.rb:12:in `call'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FollowupsController#create (for 173.221.172.242 at 2011-03-28 13:53:36) [POST]
+  Parameters: {"commit"=>"Create follow-up", "followup"=>{"task_id"=>"487", "due_date(1i)"=>"2011", "due_date(2i)"=>"3", "due_date(3i)"=>"28", "media_outlet_id"=>"", "description"=>"asdfasdfa"}, "authenticity_token"=>"NZwy0TBjRVyoqbR4MObl+2FYsNIIf5ZWaVSh12Inz5w="}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'd1be4ca7167fbb642b1f5219c19b7cf9521d51e8') LIMIT 1[0m
+  [4;35;1mFollowup Create (0.3ms)[0m   [0mINSERT INTO "followups" ("task_id", "created_at", "updated_at", "complete", "media_outlet_id", "due_date", "description") VALUES(487, '2011-03-28 13:53:36', '2011-03-28 13:53:36', 'f', NULL, '2011-03-28', 'asdfasdfa')[0m
+Redirected to http://173.255.204.86:3000/wholesalers/72/tasks/487
+Completed in 51ms (DB: 1) | 302 Found [http://173.255.204.86/followups]
+
+
+Processing TasksController#show (for 173.221.172.242 at 2011-03-28 13:53:37) [GET]
+  Parameters: {"id"=>"487", "wholesaler_id"=>"72"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'd1be4ca7167fbb642b1f5219c19b7cf9521d51e8') LIMIT 1[0m
+  [4;35;1mWholesaler Load (0.4ms)[0m   [0mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 487 AND ("tasks".wholesaler_id = 72)) ORDER BY due_date ASC[0m
+  [4;36;1mTaskTemplate Load (0.2ms)[0m   [0;1mSELECT * FROM "task_templates" WHERE ("task_templates"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering tasks/show
+  [4;35;1mFollowup Load (0.3ms)[0m   [0mSELECT * FROM "followups" WHERE ("followups".task_id = 487) ORDER BY followups.complete, followups.due_date[0m
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 487) ORDER BY due_date ASC[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "task_templates" WHERE ("task_templates"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "wholesalers" WHERE ("wholesalers"."id" = 72) ORDER BY event_date ASC[0m
+Rendered followups/_task_followup_row (8.7ms)
+Rendered followups/_followup (11.4ms)
+Rendered layouts/nav/_manager (0.5ms)
+Rendered layouts/nav/_primary (1.3ms)
+Completed in 144ms (View: 109, DB: 2) | 200 OK [http://173.255.204.86/wholesalers/72/tasks/487]
+
+
+Processing ProspectsController#index (for 173.221.172.242 at 2011-03-28 13:53:47) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'd1be4ca7167fbb642b1f5219c19b7cf9521d51e8') LIMIT 1[0m
+  [4;36;1mProspect Load (0.1ms)[0m   [0;1mSELECT * FROM "prospects" [0m
+Rendering template within layouts/application
+Rendering prospects/index
+DEPRECATION WARNING: formatted_prospects_path() has been deprecated. Please pass format to the standard prospects_path method instead.. (called from _run_haml_app47views47prospects47index46html46haml at /var/www/bath/app/views/prospects/index.html.haml:3)
+Rendered layouts/nav/_manager (0.5ms)
+Rendered layouts/nav/_primary (1.2ms)
+Completed in 38ms (View: 14, DB: 0) | 200 OK [http://173.255.204.86/prospects]
+
+
+Processing MicrositeController#index (for 173.221.172.242 at 2011-03-28 16:52:16) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/index
+Rendered layouts/nav/_microsite (0.4ms)
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://173.255.204.86/]
+
+
+Processing MicrositeController#our_goal (for 173.221.172.242 at 2011-03-28 16:52:24) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/our_goal
+Rendered layouts/nav/_microsite (0.4ms)
+Completed in 21ms (View: 16, DB: 0) | 200 OK [http://173.255.204.86/our_goal]
+** [Hoptoad] Notifier 2.4.8 ready to catch errors
+** [Hoptoad] Notifier 2.4.8 ready to catch errors
+
+
+Processing MicrositeController#index (for 173.221.172.242 at 2011-03-28 16:53:25) [GET]
+Rendering template within layouts/microsite
+Rendering microsite/index
+Rendered layouts/nav/_microsite (0.5ms)
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://173.255.204.86/]
+** [Hoptoad] Notifier 2.4.8 ready to catch errors
+** [Hoptoad] Notifier 2.4.8 ready to catch errors

@@ -1,0 +1,4 @@
+%h2= "Media Outlet: #{@media_outlet.media_outlet_name}"
+!= link_to "Edit", edit_media_outlet_path(@media_outlet)
+!= render :partial => 'media_outlets/media_outlet', :locals => {:media_outlet => @media_outlet }
+

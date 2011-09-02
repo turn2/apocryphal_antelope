@@ -1,0 +1,271 @@
+# Logfile created on Wed May 12 17:19:30 +0000 2010** [Hoptoad] Notifier 2.2.2 ready to catch errors
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to ClearanceCreateUsers (20091116055812)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "encrypted_password" varchar(128), "salt" varchar(128), "confirmation_token" varchar(128), "remember_token" varchar(128), "email_confirmed" boolean DEFAULT 'f' NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE INDEX "index_users_on_id_and_confirmation_token" ON "users" ("id", "confirmation_token")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091116055812')[0m
+Migrating to CreateTaskTemplates (20091117022002)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "task_templates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" varchar(255), "due_week" integer, "end_week" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091117022002')[0m
+Migrating to CreateWholesalers (20091118062359)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "wholesalers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "wholesaler_name" varchar(255), "contact_name" varchar(255), "email" varchar(255), "phone" varchar(255), "street_address" varchar(255), "city" varchar(255), "state" varchar(255), "postal_code" varchar(255), "event_date" date, "truck" integer) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091118062359')[0m
+Migrating to CreateTasks (20091119032732)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "due_week" integer, "end_week" integer, "task_template_id" integer, "wholesaler_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091119032732')[0m
+Migrating to TaskDueWeekToDueDate (20091122004036)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "tasks" ADD "due_date" date[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "tasks" ADD "end_date" date[0m
+  [4;35;1mSQL (31.7ms)[0m   [0mCREATE TEMPORARY TABLE "altered_tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "due_week" integer, "end_week" integer, "task_template_id" integer, "wholesaler_id" integer, "created_at" datetime, "updated_at" datetime, "due_date" date, "end_date" date) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tasks")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "tasks"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "end_week" integer, "task_template_id" integer, "wholesaler_id" integer, "created_at" datetime, "updated_at" datetime, "due_date" date, "end_date" date) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_tasks")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mDROP TABLE "altered_tasks"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TEMPORARY TABLE "altered_tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "end_week" integer, "task_template_id" integer, "wholesaler_id" integer, "created_at" datetime, "updated_at" datetime, "due_date" date, "end_date" date) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tasks")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "tasks"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "task_template_id" integer, "wholesaler_id" integer, "created_at" datetime, "updated_at" datetime, "due_date" date, "end_date" date) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_tasks")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_tasks"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091122004036')[0m
+Migrating to AddCompleteFlagToTasks (20091125215135)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "tasks" ADD "complete" boolean DEFAULT 'f'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091125215135')[0m
+Migrating to CreateFollowups (20091126023616)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "followups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "complete" boolean DEFAULT 'f', "task_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091126023616')[0m
+Migrating to CreateRegions (20091128164856)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "regions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "region_name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091128164856')[0m
+Migrating to CreateMediaOutlets (20091128181324)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "media_outlets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "media_outlet_name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091128181324')[0m
+Migrating to AddRegionIdToMediaOutlet (20091128181745)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "media_outlets" ADD "region_id" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091128181745')[0m
+Migrating to AddContactInfoToMediaOutlets (20091128194434)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "media_outlets" ADD "contact_name" varchar(255)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "media_outlets" ADD "phone" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "media_outlets" ADD "address" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "media_outlets" ADD "city" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "media_outlets" ADD "state" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "media_outlets" ADD "postal_code" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "media_outlets" ADD "close_date" date[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "media_outlets" ADD "release_date" date[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091128194434')[0m
+Migrating to AddCommentsToMediaOutlets (20091128195040)
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "media_outlets" ADD "comments" text[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091128195040')[0m
+Migrating to CreatePlumbers (20091202024342)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "plumbers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "contact_name" varchar(255), "email" varchar(255), "phone" varchar(255), "street_address" varchar(255), "city" varchar(255), "state" varchar(255), "postal_code" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091202024342')[0m
+Migrating to RenameMediaOutletAddressToStreetAddress (20091202232738)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_media_outlets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "media_outlet_name" varchar(255), "created_at" datetime, "updated_at" datetime, "region_id" integer, "contact_name" varchar(255), "phone" varchar(255), "street_address" varchar(255), "city" varchar(255), "state" varchar(255), "postal_code" varchar(255), "close_date" date, "release_date" date, "comments" text) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("media_outlets")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "media_outlets"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "media_outlets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "media_outlet_name" varchar(255), "created_at" datetime, "updated_at" datetime, "region_id" integer, "contact_name" varchar(255), "phone" varchar(255), "street_address" varchar(255), "city" varchar(255), "state" varchar(255), "postal_code" varchar(255), "close_date" date, "release_date" date, "comments" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_media_outlets")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_media_outlets"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091202232738')[0m
+Migrating to AddOwnerAndContactFieldsToWholesalers (20091203011210)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "wholesalers" ADD "owner" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "wholesalers" ADD "cell_phone" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "wholesalers" ADD "fax" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "wholesalers" ADD "other_phone" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091203011210')[0m
+Migrating to AddContactFieldsToPlumbers (20091203011211)
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "plumbers" ADD "company_name" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "plumbers" ADD "cell_phone" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "plumbers" ADD "fax" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "plumbers" ADD "other_phone" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091203011211')[0m
+Migrating to AddContactFieldsToMediaOutlets (20091203011212)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "media_outlets" ADD "email" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "media_outlets" ADD "cell_phone" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "media_outlets" ADD "fax" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "media_outlets" ADD "other_phone" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091203011212')[0m
+Migrating to AddTitleToTask (20091203071555)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "tasks" ADD "title" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091203071555')[0m
+Migrating to AddDescriptionToTask (20091203073004)
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "tasks" ADD "description" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091203073004')[0m
+Migrating to CreateFaqs (20091219215418)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "faqs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question" varchar(255), "answer" varchar(255), "link" varchar(255), "visible" boolean DEFAULT 'f') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091219215418')[0m
+Migrating to AddPositionToFaqs (20091220011412)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "faqs" ADD "position" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091220011412')[0m
+Migrating to RemoveLinkFromFaq (20091220171347)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_faqs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question" varchar(255), "answer" varchar(255), "link" varchar(255), "visible" boolean DEFAULT 'f', "position" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("faqs")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "faqs"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "faqs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question" varchar(255), "answer" varchar(255), "visible" boolean DEFAULT 'f', "position" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_faqs")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_faqs"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091220171347')[0m
+Migrating to CreateTestimonials (20091223180959)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "testimonials" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "quote" varchar(255), "author" varchar(255), "wholesaler_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091223180959')[0m
+Migrating to CreatePhotos (20091228232837)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "wholesaler_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091228232837')[0m
+Migrating to AddAttachmentsDataToPhoto (20091228232941)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "photos" ADD "picture_file_name" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "photos" ADD "picture_content_type" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "photos" ADD "picture_file_size" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "photos" ADD "picture_updated_at" datetime[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091228232941')[0m
+Migrating to CreateWaterSavings (20100124190902)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "water_savings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "gallons" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100124190902')[0m
+Migrating to CreateProspects (20100124210226)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "prospects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "opted_in" boolean DEFAULT 't', "receive_product_updates" boolean DEFAULT 'f', "receive_tour_updates" boolean DEFAULT 'f', "receive_updates_in_one_day" boolean DEFAULT 'f', "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100124210226')[0m
+Migrating to WholesalerBelongsToRegion (20100126052332)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "wholesalers" ADD "region_id" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100126052332')[0m
+Migrating to AddMediaTypeToMediaOutlet (20100129051012)
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "media_outlets" ADD "media_type" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "media_outlets" ADD "url" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100129051012')[0m
+Migrating to AddFollowupsToMediaOutlets (20100129054549)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "followups" ADD "media_outlet_id" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100129054549')[0m
+Migrating to RemoveEndDateAndEndWeek (20100129063453)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "task_template_id" integer, "wholesaler_id" integer, "created_at" datetime, "updated_at" datetime, "due_date" date, "end_date" date, "complete" boolean DEFAULT 'f', "title" varchar(255), "description" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tasks")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "tasks"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "task_template_id" integer, "wholesaler_id" integer, "created_at" datetime, "updated_at" datetime, "due_date" date, "complete" boolean DEFAULT 'f', "title" varchar(255), "description" varchar(255)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_tasks")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_tasks"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_task_templates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" varchar(255), "due_week" integer, "end_week" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("task_templates")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "task_templates"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "task_templates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" varchar(255), "due_week" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_task_templates")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_task_templates"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100129063453')[0m
+Migrating to AddWholesalerToPlumber (20100130212124)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "plumbers" ADD "wholesaler_id" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100130212124')[0m
+Migrating to AddWholesalerToUser (20100130213338)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "users" ADD "wholesaler_id" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100130213338')[0m
+Migrating to AddRoleToUser (20100130213754)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "users" ADD "role" varchar(25)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100130213754')[0m
+Migrating to CreateParts (20100131180954)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "parts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "part_name" varchar(255), "quantity" integer, "total_sale_price_in_cents" integer, "part_number" varchar(255), "date_of_sale" date, "wholesaler_id" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100131180954')[0m
+Migrating to AddCompletedCertificationSheetToWholesaler (20100206181634)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "wholesalers" ADD "completed_certification_sheet" boolean DEFAULT 'f'[0m
+  [4;36;1mSQL (10.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100206181634')[0m
+Migrating to AddExportedToPlumbers (20100207203821)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "plumbers" ADD "exported" boolean DEFAULT 'f'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100207203821')[0m
+Migrating to AddUrgentToFollowups (20100214212959)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "followups" ADD "urgent" boolean DEFAULT 'f'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100214212959')[0m
+Migrating to AddDueDateToFollowups (20100224014656)
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "followups" ADD "due_date" date[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100224014656')[0m
+Migrating to RemoveUrgentFromFollowups (20100226011644)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_followups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "complete" boolean DEFAULT 'f', "task_id" integer, "created_at" datetime, "updated_at" datetime, "media_outlet_id" integer, "urgent" boolean DEFAULT 'f', "due_date" date) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("followups")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "followups"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "followups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "complete" boolean DEFAULT 'f', "task_id" integer, "created_at" datetime, "updated_at" datetime, "media_outlet_id" integer, "due_date" date) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_followups")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_followups"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100226011644')[0m
+Migrating to AddAsRepInfoToWholesaler (20100305024355)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "wholesalers" ADD "as_rep_name" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "wholesalers" ADD "as_rep_email" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "wholesalers" ADD "as_rep_phone" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "wholesalers" ADD "as_rep_cell_phone" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "wholesalers" ADD "as_rep_fax" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100305024355')[0m
+Migrating to AddStartAndEndTimesToWholesaler (20100320224213)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "wholesalers" ADD "event_start" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "wholesalers" ADD "event_end" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100320224213')[0m
+Migrating to AddVisibleAndOrderToTestimonials (20100331200604)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "testimonials" ADD "visible" boolean DEFAULT 'f'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "testimonials" ADD "position" integer[0m
+  [4;35;1mTestimonial Load (0.1ms)[0m   [0mSELECT * FROM "testimonials" ORDER BY position[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100331200604')[0m
+Migrating to AddMessageToProspect (20100428083136)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "prospects" ADD "message" text[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100428083136')[0m
+Migrating to RemoveOptionsFromProspectAddVisitorType (20100503010200)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_prospects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "opted_in" boolean DEFAULT 't', "receive_product_updates" boolean DEFAULT 'f', "receive_tour_updates" boolean DEFAULT 'f', "receive_updates_in_one_day" boolean DEFAULT 'f', "created_at" datetime, "updated_at" datetime, "message" text) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("prospects")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "prospects"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "prospects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "opted_in" boolean DEFAULT 't', "receive_tour_updates" boolean DEFAULT 'f', "receive_updates_in_one_day" boolean DEFAULT 'f', "created_at" datetime, "updated_at" datetime, "message" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_prospects")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "altered_prospects"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TEMPORARY TABLE "altered_prospects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "opted_in" boolean DEFAULT 't', "receive_tour_updates" boolean DEFAULT 'f', "receive_updates_in_one_day" boolean DEFAULT 'f', "created_at" datetime, "updated_at" datetime, "message" text) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("prospects")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "prospects"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "prospects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "opted_in" boolean DEFAULT 't', "receive_updates_in_one_day" boolean DEFAULT 'f', "created_at" datetime, "updated_at" datetime, "message" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_prospects")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_prospects"[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TEMPORARY TABLE "altered_prospects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "opted_in" boolean DEFAULT 't', "receive_updates_in_one_day" boolean DEFAULT 'f', "created_at" datetime, "updated_at" datetime, "message" text) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("prospects")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "prospects"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "prospects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "opted_in" boolean DEFAULT 't', "created_at" datetime, "updated_at" datetime, "message" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_prospects")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_prospects"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TEMPORARY TABLE "altered_prospects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "opted_in" boolean DEFAULT 't', "created_at" datetime, "updated_at" datetime, "message" text) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("prospects")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "prospects"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "prospects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "opted_in" boolean DEFAULT 't', "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_prospects")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_prospects"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "prospects" ADD "visitor_type" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100503010200')[0m
+Migrating to AddWinners (20100510041610)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "winners" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "winner_name" varchar(255), "wholesaler_id" integer, "position" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100510041610')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("faqs")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("followups")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("media_outlets")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("parts")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("photos")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("plumbers")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("prospects")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("regions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("task_templates")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tasks")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("testimonials")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_remember_token')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_confirmation_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("water_savings")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("wholesalers")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("winners")[0m

@@ -1,0 +1,57 @@
+.block
+  .description Task 
+  .detail.huge= @task.title
+
+.block
+  .description Wholesaler
+  .detail!= link_to h(@wholesaler.wholesaler_name), wholesaler_path(@wholesaler)
+
+.block
+  .description.small Description
+  .detail= @task.description
+.clear
+
+.block.gray
+  %h4.section Detail
+- form_for [@wholesaler, @task] do |form|
+  != form.error_messages
+  .block
+    .description!= form.label :due_date, "Due Date"
+    .detail!= form.date_select :due_date, :order => [:month, :day, :year]  
+  .block
+    .description Status
+    #task_status.detail= @task.status
+  .block
+    .description!= form.label :complete, "Complete?"
+    .detail!= form.check_box :complete
+ 
+  .block.gray
+    .detail!= form.submit "Update"
+    .subtitle Save Task Details
+  
+#followups
+  .block
+    .detail.huge Follow-Ups
+
+  %table.resources.blue#followups
+    %thead
+      %tr
+        %th follow-up
+        %th wholesaler
+        %th status
+        %th due date 
+        %th 
+    %tfoot
+      %tr
+        %td follow-up
+        %td wholesaler
+        %th status
+        %td due date
+        %td
+      %tbody        
+        - @task.followups.each do |f|
+          %tr[f]
+            != render :partial => "followups/task_followup_row", :locals => { :followup => f }
+  .block.gray
+    %h4.section Create a New Follow-Up
+  != render :partial => "followups/followup", :locals => { :followup => @task.followups.build }

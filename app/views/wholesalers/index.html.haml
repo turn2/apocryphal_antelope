@@ -1,0 +1,47 @@
+.block
+  .description Index
+  .detail.huge Wholesalers
+
+.block.crunched
+  .detail!= link_to "New Wholesaler", new_wholesaler_path
+  .subtitle Create a new wholesaler
+.block.crunched
+  .detail!= link_to "Batch Import Wholesalers", upload_wholesalers_path
+  .subtitle Create many wholesalers at once 
+-#
+  .block.crunched
+    .detail!= link_to "Generate Winner List", winners_wholesalers_path
+    .subtitle Generate a list of sweepstakes winners
+.clear
+
+.block.gray
+  %h4.section Detailed Wholesaler Overview
+%table.resources#wholesalers
+  %thead
+    %tr.no_style
+      %td{:colspan => 6}
+        != will_paginate @wholesalers
+    %tr
+      %th Event Date
+      %th Wholesaler
+      %th Primary Contact
+      %th Phone
+      %th PR Region
+      %th Truck
+  %tfoot
+    %tr
+      %td Event Date
+      %td Wholesaler
+      %td Primary Contact
+      %td Phone
+      %td PR Region
+      %td Truck
+    %tr.no_style
+      %td{:colspan => 6}
+        != will_paginate @wholesalers
+  %tbody 
+    - @wholesalers.each do |wholesaler|
+      %tr.wholesaler[wholesaler]
+        != render :partial => "wholesaler_table_row", :object => wholesaler
+
+

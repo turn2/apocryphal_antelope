@@ -1,0 +1,6 @@
+.block
+  .detail.huge Standalone Media Outlets
+  .subtitle!= link_to "Add New Standalone Media Outlet", new_media_outlet_path
+
+#media_outlets
+  != render :partial => "media_outlets/media_outlets_table", :locals => {:media_outlets => @media_outlets}

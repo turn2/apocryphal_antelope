@@ -1,0 +1,70 @@
+
+.block.crunched.small
+  .description Contact Name
+  .detail= media_outlet.contact_name
+
+.block.crunched.small
+  .description Close Date
+  .detail= media_outlet.close_date
+
+.block.crunched.small
+  .description Type  
+  .detail= media_outlet.media_type
+.clear
+
+.block.gray
+  %h4.section Contact Information 
+
+.block.crunched.small
+  .description Phone  
+  .detail!= number_to_phone(media_outlet.phone)
+
+.block.crunched.small
+  .description Fax
+  .detail!= media_outlet.fax
+
+.block.crunched
+  .description Email  
+  .detail!= mail_to(media_outlet.email)
+
+.block.crunched.small
+  .description Url
+  .detail!= link_to(media_outlet.url, media_outlet.url, :class => 'external') unless media_outlet.url.nil?
+.clear
+
+.block
+  .description Address
+  .detail
+    = media_outlet.street_address
+  .detail
+    = "#{media_outlet.city}, #{media_outlet.state_name}, #{media_outlet.postal_code}"
+
+#followups
+  .block
+    .detail.huge Follow-Ups
+  %table.resources.blue#followups
+    %thead
+      %tr
+        %th follow-up
+        %th media outlet
+        %th status
+        %th due date 
+        %th 
+    %tfoot
+      %tr
+        %td follow-up
+        %td media outlet 
+        %th status
+        %td due date
+        %td
+      %tbody        
+        - media_outlet.followups.each do |f|
+          %tr!= render :partial => "followups/task_followup_row", :locals => { :followup => f }
+  
+  .block.gray
+    %h4.section Create a New Follow-Up
+  != render :partial => "followups/followup", :locals => { :followup => media_outlet.followups.build }
+  #comments.block.gray
+    %h4.section Comments
+  .block
+    .detail= media_outlet.comments

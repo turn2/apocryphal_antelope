@@ -1,0 +1,23 @@
+.block
+  .description Index
+  .detail.huge Winners
+
+.block
+  .detail!= link_to "Add Winner", new_winner_path
+  .subtitle Add a new Winner to the list
+
+%ul{:id => "winners"}
+  - @winners.each do |winner|
+    %li[winner]
+      %span.handle
+        .block.gray.crunched.gargantuan
+          .description.winner
+            = winner.winner_name
+          .detail
+            = (winner.wholesaler and winner.wholesaler.wholesaler_name) || "Wholesaler not assigned"
+        .block.crunched
+          != link_to "Delete Winner", winner_path(winner), :confirm => "Are you sure?", :method => :delete
+        .clear
+         
+!= javascript_include_tag "winners"
+

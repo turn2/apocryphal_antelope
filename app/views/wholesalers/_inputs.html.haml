@@ -1,0 +1,79 @@
+
+.block.gray
+  %h4.section Contact Information
+.block.crunched
+  .description!=form.label :wholesaler_name
+  .detail!= form.text_field :wholesaler_name
+.block.crunched
+  .description!=form.label :contact_name
+  .detail!= form.text_field :contact_name
+.clear
+
+.block.crunched
+  .description!=form.label :email
+  .detail!= form.text_field :email
+.block.crunched
+  .description!=form.label :phone
+  .detail!= form.text_field :phone
+.clear
+
+.block.gray
+  %h4.section AS Rep Contact Information
+.block.crunched
+  .description!=form.label :as_rep_name, "AS Rep name"
+  .detail!= form.text_field :as_rep_name
+.block.crunched
+  .description!=form.label :as_rep_email, "AS Rep email"
+  .detail!= form.text_field :as_rep_email
+.clear
+
+.block.crunched
+  .description!=form.label :as_rep_phone, "AS Rep phone"
+  .detail!= form.text_field :as_rep_phone
+.block.crunched
+  .description!=form.label :as_rep_cell_phone, "AS Rep cell phone"
+  .detail!= form.text_field :as_rep_cell_phone
+.block.crunched
+  .description!=form.label :as_rep_fax, "AS Rep fax"
+  .detail!= form.text_field :as_rep_fax
+.clear
+
+.block.gray
+  %h4.section Address 
+.block.crunched
+  .description!=form.label :street_address, "Address"
+  .detail!= form.text_field :street_address
+.block.crunched
+  .description!=form.label :city
+  .detail!= form.text_field :city
+.clear
+
+.block.crunched
+  .description!=form.label :state
+  .detail!= form.select :state, states_for_select
+.block.crunched
+  .description!=form.label :postal_code
+  .detail!= form.text_field :postal_code
+.clear
+
+.block.gray
+  %h4.section Event Information
+
+.block.crunched
+  .description!=form.label :event_date
+  .detail!= form.date_select :event_date
+.block.crunched
+  .description!= form.label :event_start
+  .detail!= form.text_field :event_start
+.block.crunched
+  .description!= form.label :event_end
+  .detail!= form.text_field :event_end
+.block.crunched
+  .description!=form.label :truck, "Truck #"
+  .detail!= form.text_field :truck
+.clear
+
+.block.crunched
+  .description!=form.label :region_id, "PR Region"
+  .detail!= select("wholesaler", "region_id", Region.for_select, :include_blank => "None")
+.clear

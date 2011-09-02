@@ -1,0 +1,32 @@
+%h2.standard!= (@complete ? "Complete " : "Incomplete ") + "Tasks"
+
+!= link_to_if @complete, "View incomplete tasks", task_dashboard_path, :class => "incomplete" do
+  - link_to "View complete tasks", task_dashboard_path(:complete => true), :class => "complete"
+
+- form_tag complete_tasks_path, :method => :put do
+   
+  %table.resources#tasks
+    %thead
+      %tr.no_style
+        %td{:colspan => 5}
+          != render :partial => "task_dashboard/form_buttons", :locals => {:collection => @tasks}
+          != will_paginate @tasks
+      %tr
+        %th
+        %th task
+        %th due date 
+        %th wholesaler 
+    %tfoot
+      %tr
+        %td
+        %td task
+        %td due date 
+        %td wholesaler 
+      %tr.no_style
+        %td{:colspan => 5}
+          != render :partial => "task_dashboard/form_buttons", :locals => {:collection => @tasks}
+          != will_paginate @tasks 
+    %tbody        
+      - @tasks.each do |task|
+        %tr{ task_row_attributes(task) }
+          != render :partial => task

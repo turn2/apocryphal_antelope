@@ -1,0 +1,43 @@
+%h1.media Pressroom For The Responsible Bathroom Water Conservation Tour
+%p.detail.blue.bold.large.two_thirds The media representatives for The Responsible Bathroom Water Conservation Tour, sponsored by American Standard, are ready to assist members of the press and public.
+%p.detail.blue.bold.two_thirds As always, if you have a special request, we will be happy to track down the information.  Also, we welcome you to take full advantage of the 24/7 information resources and links on this Webpage.
+%p.detail.white.bold.two_thirds
+ 
+.column.contacts.small
+  %p.bold.white.no_bottom_padding Media Contacts
+  %p.bold.blue.no_top_padding Ph. 248.608.3997
+  
+  %p.bold.blue.no_padding Sheila Nero - x309
+  %p.bold.blue.no_padding Director of PR
+  %p.bold.blue.no_top_padding snero@vfimkt.com
+  
+.column.small
+  %p.white.title.no_bottom_padding
+    Press Releases
+    .notice (Left-click to view, right-click and select "Save Target/Link As..." to download)
+  %a{:href => "pdfs/media/march_1_2011.pdf"} Press Release - March 1, 2011
+  %a{:href => "pdfs/media/Responsible_Bathroom_Sweepstake_Winner_Press_Release.pdf"}The Responsible Bathroom Tour Sweepstakes Winner
+  %a{:href => "pdfs/media/Responsible_Bathroom_Winner.pdf"}The Responsible Bathroom Sweepstakes Winner
+  %a{:href => "water_wake_up_call.html"}Water Wake Up Call
+  %p.white.title.pad_top
+    Mayor's Proclamations
+  %a{:href => "pdfs/media/proclamations MidWest.pdf"} Proclamations MidWest
+  %a{:href => "pdfs/media/proclamations NorthEast.pdf"} Proclamations NorthEast
+  %a{:href => "pdfs/media/proclamations NorthWest.pdf"} Proclamations NorthWest
+  %a{:href => "pdfs/media/proclamations SouthEast.pdf"} Proclamations SouthEast
+  %a{:href => "pdfs/media/proclamations SouthWest.pdf"} Proclamations SouthWest
+  
+  %p.white.title.pad_top Photos
+  %a{:href => "photos/media/Boulevard Dual Flush 2.jpg"} Boulevard LXP Dual Flush
+  %a{:href => "photos/media/ICU Sink.jpg"} ICU Sink
+  %a{:href => "photos/media/Decorum Urinal.jpg"} Decorum Urinal
+  %a{:href => "photos/media/Portsmouth Faucet.jpg"} Portsmouth Faucet
+  %a{:href => "photos/media/Safety Tub.jpg"} Safety Tub
+  %a{:href => "pdfs/water_efficiency_2010_final.pdf"} American Standard Water Efficient Products Brochure
+
+.column.large
+  %p.white.title Testimonials
+  - Testimonial.visible.each do |t|
+    %p.white.bold.italicize.no_bottom_padding!= t.quote
+    %p.blue.bold.medium!= t.author
+.clear

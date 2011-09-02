@@ -1,0 +1,9 @@
+%tr{ task_row_attributes(wholesaler_task) }
+  - if wholesaler_task.complete
+    %td!= link_to "Restart", restart_task_path(wholesaler_task), :method => :put, :confirm => 'Are you sure you want to restart this task?', :class => "complete"
+  - else
+    %td!= link_to "Complete", complete_single_task_path(wholesaler_task), :method => :put, :confirm => 'Are you sure you want to complete this task?', :class => "incomplete"
+
+  %td.title!= link_to wholesaler_task.title, wholesaler_task_path(wholesaler_task.wholesaler, wholesaler_task), :class => "neutral"
+  %td.due_date= wholesaler_task.due_date
+  %td.wholesaler= wholesaler_task.wholesaler.wholesaler_name

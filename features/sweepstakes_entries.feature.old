@@ -1,0 +1,31 @@
+Feature: Sweepstakes entries
+  In order to reward participants for forwarding their information
+  As the VFI project manager
+  I want to be able to enter people in the sweepstakes
+
+  Background:
+    Given a wholesaler "Joe's Wholesaler"
+
+  Scenario: Sweepstakes house entries
+    TODO
+
+  Scenario: Receive entry for filling out certification sheet
+    Given I am signed in as the VFI project manager
+    When I go to the edit page for the wholesaler "Joe's Wholesaler"
+    And I check "Completed certification sheet"
+    And I press "Update wholesaler"
+    Then wholesaler "Joe's Wholesaler" should have 2 entries in the sweepstakes
+ 
+  Scenario: Wholesalers receive entry for each approved part sale 
+    Given I am signed in with the account for the wholesaler "Joe's Wholesaler"
+    When I go to my dashboard
+    And I follow "Manage Product Sales"
+    And I enter information about an approved part sale
+    And I press "Submit"
+    Then wholesaler "Joe's Wholesaler" should have 1 entries in the sweepstakes
+
+  Scenario: Conduct monthly sweepstakes
+    Given there are 20 wholesalers
+    And all the wholesalers have completed their certification sheets
+    When the project manager runs the sweepstakes
+    Then the system will generate 14 winner entries and 6 alternate entries

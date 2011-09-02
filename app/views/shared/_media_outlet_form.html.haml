@@ -1,0 +1,48 @@
+.block.crunched
+  .description!= form.label :media_outlet_name
+  .detail!= form.text_field :media_outlet_name
+.block.crunched
+  .description!= form.label :contact_name
+  .detail!= form.text_field :contact_name
+.clear
+
+.block.gray
+  %h4.section Contact Information
+
+.block.crunched
+  .description!= form.label :email
+  .detail!= form.text_field :email
+.block.crunched
+  .description!= form.label :phone
+  .detail!= form.text_field :phone
+.clear
+
+.block.gray
+  %h4.section Address 
+.block
+  .description!= form.label :street_address
+  .detail!= form.text_field :street_address
+.block
+  .description!= form.label :city
+  .detail!= form.text_field :city
+.block
+  .description!= form.label :state, "State or Province"
+  .detail!= form.select :state, states_and_provinces_for_select
+.block
+  .description!= form.label :postal_code
+  .detail!= form.text_field :postal_code
+.block
+  .description!= form.label :close_date
+  .detail!= form.date_select :close_date
+.block
+  .description!= form.label :release_date
+  .detail!= form.date_select :release_date
+.block
+  .description!= form.label :comments
+  .detail!= form.text_area :comments
+.block
+  .description!= form.label :media_type
+  .detail!= form.text_field :media_type
+.block
+  .description!= form.label :url
+  .detail!= form.text_field :url

@@ -1,0 +1,307 @@
+      <script type="text/javascript" src="javascripts/tabs.js"><\/script>
+      <script type="text/javascript">
+        function init() {
+            hideByClass('prizes');
+            hideByClass('prizegroup');
+        }
+
+        var alreadyrunflag=0; //flag to indicate whether target function has already been run
+        if (document.addEventListener)
+          document.addEventListener("DOMContentLoaded", function(){alreadyrunflag=1; init()}, false);
+        else if (document.all && !window.opera){
+          document.write('<script type="text/javascript" id="contentloadtag" defer="defer" src="javascript:void(0)"><\/script>');
+          var contentloadtag=document.getElementById("contentloadtag");
+          contentloadtag.onreadystatechange=function() {
+            if (this.readyState=="complete") {
+              alreadyrunflag=1;
+              init();
+            }
+          }
+        }
+
+        window.onload=function(){
+          setTimeout("if (!alreadyrunflag) init();", 0)
+        }
+      </script>
+    <div id="sidebar">
+      <h3 class="txtcenter">Have you Won?</h3>
+      <p></p>
+      <p>The more you participate, the greater your chances of winning. Help save water by selling and installing water efficient products!
+      Click <a href="pdfs/AS water efficient products list.pdf" target="_blank"><strong>here</strong></a> for the complete list of products eligible for entry into the drawings.</p> 
+      <p>Complete contest rules can be found <a href="pdfs/American Standard Brands Official Rules.pdf" target="_blank"><strong>here</strong></a>.</p>
+      <p>Contest runs from April 2010 through November 2010.</p>
+      <p>Keep entering through most of 2010! Do you need additional entry forms?<br />Print <a href="pdfs/entry form.pdf" target="_blank"><strong>this</strong></a> form, fill it out and mail it</p>
+      <p>Or <a href="javascript:void(0);" onclick="hideByClass('prizegroup');hideByClass('prizes');showByClass('online-form');">fill out the form online</a></p>
+      <img src="images/prizes-left-bottom.png" alt="" />
+    </div>
+    <div id="maincontent">
+      <h1 class="txtcenter">One Of These Dream Vacations<br /> Could Be Yours!</h1>
+      <p></p>
+      <div class="txtcenter">
+      <h2>Click on a link below for more information:</h2>
+      <p></p>
+      <a href="javascript:void(0);" onclick="hideByClass('prizegroup');hideByClass('prizes');showByClass('grand');"><h3>Grand Prize: $12,500 Once-in-a-Lifetime Dream Trip</h3></a>
+      <a href="javascript:void(0);" onclick="hideByClass('prizegroup');hideByClass('prizes');showByClass('second');"><h3>Second Place: $6,000 Dream Vacation</h3></a>
+      <a href="javascript:void(0);" onclick="hideByClass('prizegroup');hideByClass('prizes');showByClass('third');"><h3>Third Place: $3,500 Getaway Vacation</h3></a>
+      <a href="javascript:void(0);" onclick="hideByClass('prizegroup');hideByClass('prizes');showByClass('drawings');"><h3>Monthly random cash drawings up to $1000</h3></a>
+      <br />
+      <br />
+      <h1 class="txtcenter">Latest Winners</h1>
+      <br />
+          <% @winners.each do |w| %>
+            <p><b><%= w.winner_name %></b></p>
+          <% end %>
+      </div>
+      <div class="online-form prizegroup tabinit">
+<h2>AMERICAN STANDARD&reg;<br />
+THE RESPONSIBLE BATHROOM<br />
+WATER CONSERVATION TOUR</h2>
+<p>Enter often for more chances to win!</p>
+      <form>
+      <table>
+      <tr><th>Name:</th><td><input type="text" size="20"></td></tr>
+      <tr><th>Address:</th><td><input type="text" size="20"></td></tr>
+      <tr><th>City:</th><td><input type="text" size="20"></td></tr>
+      <tr><th>State:</th><td><input type="text" size="20"></td></tr>
+      <tr><th>Zip:</th><td><input type="text" size="20"></td></tr>
+      <tr><th>Email:</th><td><input type="text" size="20"></td></tr>
+      <tr><th>Products Purchased</th><th>Product Code</th></tr>
+      <tr><td><input type="text" size="20"></td><td><input type="text" size="20"></td></tr>
+      <tr><td><input type="text" size="20"></td><td><input type="text" size="20"></td></tr>
+      <tr><td><input type="text" size="20"></td><td><input type="text" size="20"></td></tr>
+      <tr><th>Wholesaler:</th><td><input type="text" size="20"></td></tr>
+      <tr><th>Date:</th><td><input type="text" size="20"></td></tr>
+      </table>
+      <input type="submit" value="Submit">
+      </form>
+      <p></p>
+<p class="smalltext">NO PURCHASE NECESSARY. Sweepstakes is open only to licensed plumber contractors, who are
+legal residents of the U.S. and D.C., 18 years + at time of entry. View Official Rules at www.theresponsiblebathroom.
+com. Sweepstakes begins 12:00 AM Eastern Time (ET) 4/1/10, ends 11:59 PM (ET)
+12/31/10. Sponsor: American Standard Brands, Piscataway, N.J. Void where prohibited. *Gifts and
+door prizes available while supplies last.</p>
+      </div>
+      <div class="grand prizegroup tabinit">
+        <h2>4 Grand Prize Choices: $12,500 value each</h2>
+        <div>
+        <ul class="default">
+          <li><a href="javascript:void(0);" onclick="hideByClass('prizegroup');hideByClass('prizes');showByClass('grand');showByClass('grand1');">Canadian Fly-in Fishing at its Finest</a></li>
+          <li><a href="javascript:void(0);" onclick="hideByClass('prizegroup');hideByClass('prizes');showByClass('grand');showByClass('grand2');">Guatemala Sail Fishing Expedition</a></li>
+          <li><a href="javascript:void(0);" onclick="hideByClass('prizegroup');hideByClass('prizes');showByClass('grand');showByClass('grand3');">Cabo San Lucas Luxury Villa Vacation</a></li>
+          <li><a href="javascript:void(0);" onclick="hideByClass('prizegroup');hideByClass('prizes');showByClass('grand');showByClass('grand4');">Casually Elegant Windstar Cruise</a></li>
+        </ul>
+        </div>
+        <br />
+        <div class="grand1 prizes">
+          <h3>Canadian Fly-in Fishing at its Finest</h3>
+          <p>Northern Saskatchewan -- peaceful, beautiful yet exciting. Enjoy the thrill of terrific
+          fishing for monster Lake Trout, huge Northern Pike or the Arctic Grayling.
+          This all inclusive trip gives you fine dining, drinks, luxurious accommodations and supreme service.
+          Let yourself be spoiled in this unspoiled wilderness.</p>
+          <img src="images/Selwyn-lake-Lodge.gif" alt="Selwyn Lake Lodge" class="fltrt" />
+          <div>
+          <ul class="default">
+            <li>4 Days at Selwyn Lake Lodge for 2</li>
+            <li>Private chartered float plane</li>
+            <li>Personal fishing guide for full-day excursions</li>
+            <li>Fitness facilities, pool, whirlpool</li>
+            <li>Daily maid and laundry service</li>
+          </ul>
+          </div>
+          <br class="clearrt" />
+          <p>Click <a href="pdfs/Grand Prize - Selwyn Lake Lodge.pdf" target="_blank">here</a> to see more prize details.</p>
+        </div>
+        <div class="grand2 prizes">
+          <h3>Guatemala Sail Fishing Expedition</h3>
+          <p>This is saltwater fly-fishing like no other! You will have many opportunities
+          to catch Pacific Sailfish, Blue Marlin, Black Marlin, Tuna and Dorado. Let your personal
+          fishing guide get you the bill fishing chance of a lifetime; Guatemala is considered
+          The Sailfish Capital of the World.  There is no shortage of open water action, warmth and
+          beauty with this Pacific fishing excursion.</p>
+          <img src="images/Guatemala-Sail-Fishing.gif" alt="Guatemala Sail Fishing" class="fltrt" />
+          <div>
+          <ul class="default">
+            <li>5 nights, 4 days for 2 in a private villa at the Villa Del Pacifico Resort</li>
+            <li>Bertram sport fishing boats fully staffed</li>
+            <li>Use conventional tackle or light fly-fishing tackle</li>
+            <li>Enthusiastic, experienced bilingual guides</li>
+            <li>Open bar, meals included, weekend entertainment</li>
+            <li>Personal chef and maid service</li>
+          </ul>
+          </div>
+          <br class="clearrt" />
+          <p>Click <a href="pdfs/Grand Prize - Guatemala Sail Fishing Expedition.pdf" target="_blank">here</a> to see more prize details.</p>
+        </div>
+        <div class="grand3 prizes">
+          <h3>Cabo San Lucas Luxury Villa Vacation</h3>
+          <p>An elegant, oceanfront villa awaits you! With views of the Sea of Cortez, your own
+          private chef and fabulous spa treatments, this is your dream vacation. Choose from
+          adventurous side trips and exciting city tours to capture the feel and pulse of Mexico's
+          art, history and natural wonders.</p>
+          <img src="images/Villa-Las-Olas.gif" alt="Selwyn Lake Lodge" class="fltrt" />
+          <div>
+          <ul class="default">
+            <li>3 nights, 4 days for 2 at a private villa with fine furnishings and two infinity edge pools</li>
+            <li>Gorgeous outdoor terrace, fireplace and barbeque</li>
+            <li>Private transportation, daily housekeeping</li>
+            <li>Expert massage, fantastic nightlife</li>
+            <li>Superb dining and day excursions</li>
+          </ul>
+          </div>
+          <br class="clearrt" />
+          <p>Click <a href="pdfs/Grand Prize - Cabo San Lucas.pdf" target="_blank">here</a> to see more prize details.</p>
+        </div>
+        <div class="grand4 prizes">
+          <h3>Casually Elegant Windstar Cruise</h3>
+          <p>Towering sails and computerized controls define the new luxurious standard in refined sailing.
+          Sail to Barbados, St. Kitts and St. Lucia for the ultimate in cruising pleasure.
+          Smaller ships with far fewer passengers allow the friendly staff to accommodate all your needs. </p>
+          <img src="images/Windstar-cruise.gif" alt="Selwyn Lake Lodge" class="fltrt" />
+          <div>
+          <ul class="default">
+            <li>8 day cruise for 2 with oceanview stateroom</li>
+            <li>Complimentary excitement with waterskiing, windsurfing, kayaking and more</li>
+            <li>Exquisite sunsets while dining on fresh gourmet, 5-star cuisine</li>
+            <li>Relaxed atmosphere destined to please</li>
+            <li>One staff member for every two guests give supreme attention to detail</li>
+          </ul>
+          </div>
+          <br class="clearrt" />
+          <p>Click <a href="pdfs/Grand Prize - WindStar Cruise.pdf" target="_blank">here</a> to see more prize details.</p>
+        </div>
+      </div>
+      <div class="second prizegroup tabinit">
+        <h2>3 Second Prize Choices: $6000 value each</h2>
+        <div>
+        <ul class="default">
+          <li><a href="javascript:void(0);" onclick="hideByClass('prizegroup');hideByClass('prizes');showByClass('second');showByClass('second1');">Paradise Island Escape</a></li>
+          <li><a href="javascript:void(0);" onclick="hideByClass('prizegroup');hideByClass('prizes');showByClass('second');showByClass('second2');">Canadian Fishing on the English River</a></li>
+          <li><a href="javascript:void(0);" onclick="hideByClass('prizegroup');hideByClass('prizes');showByClass('second');showByClass('second3');">Royal Caribbean Cruise to Mexico and the Bahamas</a></li>
+        </ul>
+        </div>
+        <br />
+        <div class="second1 prizes">
+          <h3>Paradise Island Escape</h3>
+          <p>Come to the Bahamas! Enjoy the beachfront Atlantis Royal Towers with its unique murals,
+          gorgeous fountains and relaxing pools. The highest level of service is yours with an
+          Imperial Club room with French balcony looking out onto the clear blue water. Interact with over
+          20 bottlenose dolphins at the Atlantis Marine Habitat where conservation meets luxury.</p>
+          <img src="images/Atlantis-Bahamas.gif" alt="Atlantis Bahamas" class="fltrt" />
+          <div>
+            <ul class="default">
+              <li>4 days, 3 nights for 2 with concierge level room</li>
+              <li>Gourmet Dining Plan with several delectable restaurants to choose from</li>
+              <li>Aquaventure waterscape of pools, fountains, rivers and waterslides</li>
+              <li>Mandara Spa, Turtle Beach, Sports Center</li>
+              <li>8,000 sq ft Casino and two-story nightclub for an evening's entertainment</li>
+            </ul>
+          </div>
+          <br class="clearrt" />
+          <p>Click <a href="pdfs/Second Place - Atlantis - Bahamas.pdf" target="_blank">here</a> to see more prize details.</p>
+        </div>
+        <div class="second2 prizes">
+          <h3>Canadian Fishing on the English River</h3>
+          <p>Some of the Best Walleye Fishing in Canada! Kettle Falls Lodge at Halley's Camps
+          is all-inclusive right down to the minnows and fishing licenses. Just bring your desire
+          for fine fishing and an appetite for the outdoors. Your guide will take you to the best
+          fishing spots and cook up your catch for lunch.</p>
+          <img src="images/Kettle-Falls-Lodge.gif" alt="Kettle Falls Lodge" class="fltrt" />
+          <div>
+            <ul class="default">
+              <li>3 days and nights for 2 at Halley's Camps</li>
+              <li>17 ft Lund fishing boats with fuel-efficient 4-stroke motors</li>
+              <li>Massive hand-hewn spruce logs and granite oversized fireplace in  Main Lodge</li>
+              <li>Daily maid service and all linens provided</li>
+              <li>Fish for Walleye, Smallmouth Bass and Northern Pike</li>
+            </ul>
+          </div>
+          <br class="clearrt" />
+          <p>Click <a href="pdfs/Second Place - Halleys camps.pdf" target="_blank">here</a> to see more prize details.</p>
+        </div>
+        <div class="second3 prizes">
+          <h3>Royal Caribbean Cruise to Mexico and the Bahamas</h3>
+          <p>Relax, Revive, and Refresh with an exciting cruise to Key West, Florida, Cozumel, Mexico
+          and CocoCay, Bahamas.  Want nightlife? We've got it. Need to relax and unwind? Try our incredible
+          spas. Let the blue of the water and the elegance of our ship transport you to paradise. </p>
+          <img src="images/Western-Caribbean-Cruise.gif" alt="Western Caribbean Cruise" class="fltrt" />
+          <div>
+            <ul class="default">
+              <li>6 days and nights for 2 in a Deluxe Suite Stateroom</li>
+              <li>Excursion and drink allotment for adventure and entertainment</li>
+              <li>Daily onboard activities or just lounge around the pool</li>
+              <li>Kayak, snorkel a coral reef, cooking classes, golf, waverunners </li>
+              <li>Interact with dolphins at Chankanaab National Marine Park</li>
+            </ul>
+          </div>
+          <br class="clearrt" />
+          <p>Click <a href="pdfs/Second Place - Atlantis - Bahamas.pdf" target="_blank">here</a> to see more prize details.</p>
+        </div>
+      </div>
+      <div class="third prizegroup tabinit">
+        <h2>3 Third Prize Choices: $3500 value</h2>
+        <div>
+        <ul class="default">
+          <li><a href="javascript:void(0);" onclick="hideByClass('prizegroup');hideByClass('prizes');showByClass('third');showByClass('third1');">Sea World and The Ritz-Carlton Grande Lakes</a></li>
+          <li><a href="javascript:void(0);" onclick="hideByClass('prizegroup');hideByClass('prizes');showByClass('third');showByClass('third2');">Royal Caribbean Cruise to CocoCay, Bahamas</a></li>
+          <li><a href="javascript:void(0);" onclick="hideByClass('prizegroup');hideByClass('prizes');showByClass('third');showByClass('third3');">Choose Your Own Adventure!</a></li>
+        </ul>
+        </div>
+        <br />
+        <div class="third1 prizes">
+          <h3>Sea World and The Ritz-Carlton Grande Lakes</h3>
+          <p>Discover Grande Lakes Orlando! Enchanting natural surrounding with over 500 acres of
+          natural beauty, golf, restaurants and indoor and outdoor activities. Welcome to the sun-drenched
+          Florida oasis with the luxury of Ritz-Carlton and the attractions of Orlando. The mysteries of the
+          sea are yours with inclusive tickets to Sea World and its flying roller coaster, Shamu shows and
+          astounding thrill rides.</p>
+          <img src="images/Grande-Lakes.gif" alt="Grande Lakes" class="fltrt" />
+          <div>
+            <ul class="default">
+              <li>4 days, 3 nights in Deluxe Guestroom</li>
+              <li>2 tickets to Sea World Orlando for length of stay</li>
+              <li>Makahiki Luau and Polynesian Feast at Sea World; gifted musicians and dancers, tropical food and drink</li>
+              <li>Artisanal cuisine, private lake fishing, cooking classes</li>
+              <li>Revitalize mind and body at the Ritz-Carlton Spa</li>
+            </ul>
+          </div>
+          <br class="clearrt" />
+          <p>Click <a href="pdfs/Third Place - SeaWorld Grande Lakes.pdf" target="_blank">here</a> to see more prize details.</p>
+        </div>
+        <div class="third2 prizes">
+          <h3>Royal Caribbean Cruise to CocoCay, Bahamas</h3>
+          <p>Follow Blackbeard's Footsteps to CocoCay! Let the sugar-sand beaches take you back to the pirate
+          days. See the charm of Nassau and the old-world architecture of the Bahamas. For a contemporary feel,
+          visit fine restaurants, go parasailing and sip delicious "Coco Locos" on your hammock.</p>
+          <img src="images/Bahamas-Cruise.gif" alt="Bahamas Cruise" class="fltrt" />
+          <div>
+            <ul class="default">
+              <li>3 days, 2 nights in Junior Suite with private balcony</li>
+              <li>See sharks, barracuda and many more at Predator Lagoon</li>
+              <li>Nature trails and the Royal Victoria Garden with over 300 species of beautiful flowers and plants</li>
+              <li>Exotic shopping,  beachside barbeques</li>
+              <li>Turquoise water for snorkeling, sunning, swimming</li>
+            </ul>
+          </div>
+          <br class="clearrt" />
+          <p>Click <a href="pdfs/Third Place - Royal Caribbean Bahamas Cruise.pdf" target="_blank">here</a> to see more prize details.</p>
+        </div>
+        <div class="third3 prizes">
+          <h3>Choose Your Own Adventure!</h3>
+          <p>Have you always wanted to go somewhere? Plan your trip, send us the itinerary and we will pay for
+          it up to $3500! Want to go to Vegas? See the Empire State Building? Take a Mississippi Cruise? You do
+          the planning, we do the paying.</p>
+          <div>
+            <ul class="default">
+              <li>Flexibility in vacation choices</li>
+              <li>Take more people for a shorter duration</li>
+              <li>Get exactly what you want</li>
+            </ul>
+          </div>
+          <br class="clearrt" />
+        </div>
+      </div>
+      <div class="drawings prizegroup tabinit">
+        <h2>Monthly random cash drawings up to $1000</h2>
+        <div><!-- List of Drawing Winners --></div>
+      </div>
+    </div>

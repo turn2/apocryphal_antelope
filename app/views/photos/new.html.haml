@@ -1,0 +1,15 @@
+.block
+  .description= @wholesaler.wholesaler_name
+  .detail.huge New Photo
+
+- form_for [@wholesaler, @photo], :html => { :multipart => true } do |f|
+  .block
+    .description!= f.label :picture, "Upload Photo"
+    .detail!= f.file_field :picture
+    .subtitle Select a "jpg" or "jpeg" file to add to the Wholesaler photos, or select a "zip" file containing many "jpeg"s to add all of them to the wholesaler.
+  
+  .block.gray
+    %h4.section Upload Selected Photo(s)
+  .block!= f.submit "Upload"
+.block
+  .description!= link_to "&laquo; Back to photos", wholesaler_photos_path(@wholesaler)

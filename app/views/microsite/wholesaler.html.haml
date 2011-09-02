@@ -1,0 +1,20 @@
+%h1
+  Please log in.
+%form
+  %table
+    %thead
+      %th
+        User Name:
+      %th
+        Password:
+    %tbody
+      %td
+        %input{ :name => "username", :type => "text" }
+      %td
+        %input{ :name => "password", :type => "password" }
+  %input{ :type => "submit", :value => "Log In" }
+%p
+  Click
+  %a{ :href => "plumber-info.html" }
+    here
+  to enter wholesaler information.

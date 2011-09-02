@@ -1,0 +1,104 @@
+/*
+Sass::SyntaxError: Undefined variable: "!green_five".
+on line 11 of /var/www/turn2/vfi/public/stylesheets/sass/pagination.sass
+
+7: 
+8:   a
+9:     :background = #fff
+10:     :padding 4px 6px
+11:     :color = !green_five
+12:     :font-weight bold
+13:     :text-decoration none
+14:     &:hover, &:active
+15:       :background = !green_two + #222
+16: 
+17:   .current
+
+
+Backtrace:
+/var/www/turn2/vfi/public/stylesheets/sass/pagination.sass:11
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/script/variable.rb:27:in `perform'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/prop_node.rb:99:in `perform!'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:181:in `_perform'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:158:in `perform'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:202:in `perform_children'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:202:in `map'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:202:in `perform_children'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:193:in `perform!'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/rule_node.rb:159:in `perform!'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:181:in `_perform'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:158:in `perform'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:202:in `perform_children'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:202:in `map'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:202:in `perform_children'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:193:in `perform!'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/rule_node.rb:159:in `perform!'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:181:in `_perform'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:158:in `perform'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:202:in `perform_children'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:202:in `map'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:202:in `perform_children'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:193:in `perform!'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:181:in `_perform'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:158:in `perform'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/tree/node.rb:103:in `render'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/plugin.rb:94:in `update_stylesheet'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/plugin.rb:80:in `update_stylesheets'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/plugin.rb:75:in `each'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/plugin.rb:75:in `update_stylesheets'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/plugin.rb:73:in `each'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/plugin.rb:73:in `update_stylesheets'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/plugin.rb:60:in `check_for_updates'
+/var/www/turn2/vfi/vendor/gems/haml-2.2.13/rails/../lib/sass/plugin/rails.rb:18:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/hoptoad_notifier-2.4.8/lib/hoptoad_notifier/rack.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/hoptoad_notifier-2.4.8/lib/hoptoad_notifier/user_informer.rb:12:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Sass::SyntaxError: Undefined variable: \"!green_five\".\A on line 11 of /var/www/turn2/vfi/public/stylesheets/sass/pagination.sass\A \A 7: \A 8:   a\A 9:     :background = #fff\A 10:     :padding 4px 6px\A 11:     :color = !green_five\A 12:     :font-weight bold\A 13:     :text-decoration none\A 14:     &:hover, &:active\A 15:       :background = !green_two + #222\A 16: \A 17:   .current\A "; }

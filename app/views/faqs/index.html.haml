@@ -1,0 +1,8 @@
+#maincontent
+  %h1 Frequently Asked Questions
+  %br
+  - @faqs.each do |faq|
+    
+    .block
+      %p.hilite!= faq.question
+      %p!= format_answer(sanitize faq.answer)

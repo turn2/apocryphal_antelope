@@ -1,0 +1,20 @@
+%h3 Follow the Tour Subscribers
+%p
+  != link_to "Export Subscriber List", formatted_prospects_path("csv")
+%table.table.resources#prospects
+  %thead
+    %tr
+      %th Name
+      %th Email
+      %th Opted-in?
+      %th Visitor Type
+      %th 
+  %tbody
+    - @prospects.each do |prospect|
+      %tr
+        %td&= prospect.name
+        %td&= prospect.email
+        %td&= prospect.opted_in?
+        %td&= prospect.visitor_type
+        %td!= link_to "Edit", edit_prospect_path(prospect)
+    

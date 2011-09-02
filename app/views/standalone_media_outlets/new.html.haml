@@ -1,0 +1,7 @@
+.block
+  .detail.huge Create Media Outlet
+
+- form_for @media_outlet do |form|
+  != render :partial => 'shared/media_outlet_form', :locals => {:form => form}
+  != form.submit "Create Media Outlet"
+  

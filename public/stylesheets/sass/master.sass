@@ -1,0 +1,86 @@
+// import universal variable and mixin definitions
+@import colors.sass
+@import mixins.sass
+@import tables.sass
+@import pagination.sass
+@import nav.sass
+@import forms.sass
+@import gradients.sass
+@import basic_layout.sass
+@import flash.sass
+@import faq.sass
+@import errors.sass
+@import rounded_corners.sass
+
+body
+  :background #97B4E3
+  +sans_fonts
+  :font-size 62.5%
+  :padding 0 0 20px 0
+  :margin 0
+
+  #header
+    :background #000
+    :color white
+    :font-weight light
+    :font-size 1.8em
+    :width 100%
+    :padding 11px
+
+    h2
+      margin: 0
+      padding: 0
+  
+  #container
+    :width 100%
+    :background #97B4E3
+    :height 400px
+   
+    #content
+      :background #FFFFFF
+      :border 1px solid #bcbcbc
+      :float left
+      :padding 6px 2%
+      :margin 20px 0 20px 2%
+      :width 74%
+      :font
+        :size 1.2em
+      &.no_width
+        :width 0
+
+a
+  :font-weight bold
+  :color = !blue_five
+  :text-decoration none
+  &:hover
+    :text-decoration underline
+
+  &.incomplete, &.complete, &.neutral
+    :font
+      :weight bold
+    :padding 6px 8px
+    :margin 0
+    :text-decoration none
+    &:hover
+      :text-decoration none
+      :color = #fff
+  &.complete
+    :color = !green_five
+  &.complete:hover
+    :background = !green_five
+    :text-decoration none
+  &.incomplete
+    :color = !red_five
+  &.incomplete:hover
+    :background = !red_five
+    :text-decoration none
+  &.neutral
+    :color = !blue_five
+    :text-decoration none
+  &.neutral:hover
+    :background = !blue_five
+    :text-decoration none
+
+
+.clear
+  :clear both

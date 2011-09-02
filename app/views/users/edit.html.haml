@@ -1,0 +1,5 @@
+%h2 Edit user account
+- form_for @user, :url => wholesaler_user_path(@wholesaler) do |form|
+  != form.error_messages
+  != render :partial => "/users/inputs", :locals => { :form => form }
+  != form.submit "Update user"

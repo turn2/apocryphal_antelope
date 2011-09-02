@@ -1,0 +1,7 @@
+- form_for @media_outlet, :url => media_outlet_path(@media_outlet) do |form|
+  != render :partial => 'shared/media_outlet_form', :locals => { :form => form }
+  .region
+    != form.label :region_id
+    != select("media_outlet", "region_id", Region.for_select, :include_blank => "None")
+  != form.submit "Update Media Outlet"
+  

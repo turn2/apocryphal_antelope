@@ -1,0 +1,25 @@
+.block
+  .detail.huge Submit a Sold Product/Part
+  .subtitle Enter information about an approved American Standard part that was sold during your event to recieve an entry into the monthly drawing
+
+- form_for(@part, :url => dashboard_parts_path(@wholesaler)) do |f|
+  != f.error_messages
+
+  .block
+    .description!= f.label :part_name, "Product name"
+    .detail!= f.text_field :part_name
+  .block
+    .description!= f.label :quantity
+    .detail!= f.text_field :quantity
+  .block
+    .description!= f.label :total_sale_price
+    .detail!= f.text_field :total_sale_price
+  .block
+    .description!= f.label :part_number 
+    .detail!= f.text_field :part_number
+  .block
+    .description!= f.label :date_of_sale
+    .detail!= f.date_select :date_of_sale
+  .block.gray
+    .detail!= f.submit "Submit"
+    .subtitle submit the product/part for an entry into the monthly drawing

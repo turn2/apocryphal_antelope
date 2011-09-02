@@ -1,0 +1,171 @@
+%div[@wholesaler]
+  .block
+    .description Wholesaler
+    .detail.huge= @wholesaler.wholesaler_name
+    .subtitle!=link_to "Edit", edit_wholesaler_path(@wholesaler)
+ 
+  .block.crunched
+    .detail!=link_to "Conquest Data", wholesaler_plumbers_path(@wholesaler)
+    .subtitle View plumbers that have been submitted by this plumber and export their data to a spreadsheet
+  -#
+    .block.crunched
+      .detail!=link_to "Approved Part Sales", wholesaler_parts_path(@wholesaler)
+      .subtitle View part sales submitted by this plumber and export a complete list to a spreadsheet
+  .block.crunched
+    .detail!= link_to "Photos", wholesaler_photos_path(@wholesaler)
+    .subtitle Manage uploaded photos, upload addtional photos either individually or in a .zip archive
+  .clear 
+  
+  .block.gray
+    %h4.section Contact Information
+  .block.crunched.third
+    .description Primary Contact
+    .detail= @wholesaler.contact_name
+  .block.crunched.large
+    .description Email
+    .detail= @wholesaler.email
+  .block.crunched.third
+    .description Phone
+    .detail= number_to_phone(@wholesaler.phone, :area_code => true)
+  .clear
+
+  .block.crunched.huge
+    .description Address
+    .detail
+      = @wholesaler.street_address
+    .detail
+      = "#{@wholesaler.city}, #{@wholesaler.state_name}, #{@wholesaler.postal_code}"
+  .clear
+  
+  .block.gray
+    %h4.section AS Rep Contact Information
+  .block.crunched.medium
+    .description Name
+    .detail= @wholesaler.as_rep_name
+  .block.crunched.medium
+    .description Email
+    .detail= @wholesaler.as_rep_email
+  .block.crunched.medium
+    .description Phone
+    .detail= number_to_phone(@wholesaler.as_rep_phone, :area_code => true)
+  .block.crunched.medium
+    .description Cell Phone
+    .detail= number_to_phone(@wholesaler.as_rep_cell_phone, :area_code => true)
+  .block.crunched.medium
+    .description Fax
+    .detail= number_to_phone(@wholesaler.as_rep_fax, :area_code => true)
+  .clear
+  
+  .block
+    .detail.huge Incomplete tasks
+  - form_tag complete_tasks_path, :method => :put do
+    != hidden_field_tag :wholesaler_id, @wholesaler[:id]
+    %table.resources#tasks
+      %thead
+        %tr
+          %th
+          %th task
+          %th due date 
+          %th wholesaler 
+      %tfoot
+        %tr
+          %td
+          %td task
+          %td due date 
+          %td wholesaler 
+      %tbody
+        != render :partial => "wholesaler_task", :collection => @wholesaler.tasks.incomplete
+  
+
+  .block
+    .detail.huge= "#{"There are no " if @wholesaler.tasks.complete.empty?} Complete Tasks"
+  - unless @wholesaler.tasks.complete.empty?
+    %table.resources#tasks
+      %thead
+        %tr
+          %th
+          %th task
+          %th due date 
+          %th wholesaler 
+      %tfoot
+        %tr
+          %td
+          %td task
+          %td due date 
+          %td wholesaler 
+      %tbody
+        != render :partial => "wholesaler_task", :collection => @wholesaler.tasks.complete
+          
+  
+  .block 
+    .detail.huge Testimonials
+    .subtitle Manage testimonials provided by attendees of the wholesaler's event
+
+  %table.resources#testimonials
+    %thead
+      %tr
+        %th quote
+        %th author 
+        %th published?
+        %th
+        %th
+    %tfoot
+      %tr
+        %td quote
+        %td author
+        %td published?
+        %td
+        %td
+    %tbody
+      - @wholesaler.testimonials.each do |testimonial|
+        %tr.testimonial[testimonial]
+          %td.quote
+            != testimonial.quote
+          %td.author= testimonial.author
+          %td.published= testimonial.visible ? "Published" : "Unpublished"
+          %td.delete
+            != link_to "Delete Testimonial", [@wholesaler,testimonial], :confirm => "Are you sure?", :method => :delete
+          %td
+            != link_to "Manage published testimonials", testimonials_published_testimonials_path if testimonial.visible
+            != button_to "Add to media tab", approve_wholesaler_testimonial_path(@wholesaler, testimonial), {:method => :put, :confirm => "Make this testimonial show up on the media tab?" } unless testimonial.visible
+  
+  .block.gray
+    %h4.section Create a Testimonial
+  #new_testimonial
+    -form_for([@wholesaler, Testimonial.new]) do |f|
+      != f.error_messages
+      .block.crunched.medium
+        .description!= f.label :quote
+        .detail!= f.text_field :quote
+      .block.crunched.medium
+        .description!= f.label :author
+        .detail!= f.text_field :author
+      .clear
+      .block!= f.submit "Create Testimonial"
+  
+  .block
+    .detail.huge Media Outlets
+    .subtitle A list of media outlets with which this wholesaler is associated
+  %table#media_outlets.resources
+    %thead
+      %tr
+        %th Name
+        %th Type
+        %th Contact
+        %th Close Date
+        %th Release Date
+    %tfoot
+      %tr
+        %td Name
+        %td Type
+        %td Contact
+        %td Close Date
+        %td Release Date
+    %tbody
+      - @wholesaler.media_outlets.each do |media_outlet|
+        %tr.media_outlet
+          %td.media_outlet_name!= link_to media_outlet.media_outlet_name, region_media_outlet_path(media_outlet.region, media_outlet)
+          %td.media_type= media_outlet.media_type
+          %td.contact_name= media_outlet.contact_name
+          %td.close_date= media_outlet.close_date
+          %td.release_date= media_outlet.release_date

@@ -1,0 +1,85 @@
+@import colors.sass
+@import mixins.sass
+
+table.resources
+  :margin 4px auto
+  :width 100%
+  :border-spacing 0
+  thead, tfoot
+    tr
+      :background #ccc
+      :color #333
+      :font
+        :weight bold
+      th, td
+        :padding 6px 8px
+        :text-align left
+        :font-size 0.9em
+      &.no_style
+        :background #fff
+        :border none
+  &.blue
+    thead, tfoot
+      tr
+        :background = !blue_three
+        :color #fff
+          
+  tbody
+    tr
+      td
+        :border-bottom 1px solid #ddd
+      &.light
+        :background #fff
+      &.dark
+        :background #eee
+      &:hover
+        :background = !blue_one
+      &.urgent
+        td
+          :border-bottom = "1px solid #{!red_border}"
+          & a.neutral
+            :color = !red_five
+            :padding 6px
+          & a.neutral:hover
+            :color = #fff
+            :text-decoration none
+            :background = !red_five
+        &.dark
+          :background = !red_two
+        &.light
+          :background = !red_one
+    td
+      :padding 6px
+      &.red
+        :color white
+        :background = !red_four
+      &.green
+        :color white
+        :background = !green_five
+      &.yellow
+        :color #333
+        :background = !yellow_five
+      &.limit_width
+        :width 44%
+      a
+        :font-weight bold
+        :color = !blue_five
+        :text-decoration none
+      a:hover
+        :text-decoration underline
+      a.complete
+        :color = !green_five
+        :padding 6px
+      a.complete:hover
+        :color = #fff
+        :text-decoration none
+        :background = !green_five
+      a.incomplete
+        :color = !red_five
+        :padding 6px
+      a.incomplete:hover
+        :color = #fff
+        :text-decoration none
+        :background = !red_five
+      a.neutral:hover
+        :text-decoration none

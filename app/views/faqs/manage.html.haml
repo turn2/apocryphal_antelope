@@ -1,0 +1,24 @@
+.block
+  .description Index
+  .detail.huge Manage FAQs
+
+.block
+  .detail!= link_to "Create new FAQ", new_faq_path
+  .subtitle Create a new question-answer pair to be displayed in the FAQs
+
+%ul{:id => "faqs"}
+  - @faqs.each do |faq|
+    %li[faq]
+      %span.handle
+        .block.gray.crunched.gargantuan{ :class => faq_class(faq) }
+          .description.faq
+            = faq.question
+            !=link_to "edit", edit_faq_path(faq)
+          .detail!= format_answer(sanitize faq.answer)
+        .block.crunched
+          - if faq.visible?
+            != button_to "Hide From Public", hide_faq_path(faq), :method => :put, :confirm => "Hide this FAQ from the public site?"
+          - else
+            != button_to("Send Live",  approve_faq_path(faq), {:method => :put, :confirm => "Make this FAQ visible on the public site?" })
+        .clear
+!= javascript_include_tag "faqs"

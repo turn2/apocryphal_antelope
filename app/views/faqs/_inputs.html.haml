@@ -1,0 +1,11 @@
+.block.question.crunched
+  .description!= form.label :question
+  .detail!= form.text_field :question
+.block.visible.crunched
+  .description!= form.label :visible, "Approved"
+  .detail!= form.check_box :visible
+.clear
+
+.block.answer
+  .description!= form.label :answer
+  .detail!= form.text_area :answer

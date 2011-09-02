@@ -1,0 +1,5 @@
+%tr[followup]
+  %td!= link_to followup.description, followup_container_path(followup), :class => "neutral"
+  %td!= followup.status
+  %td= followup.due_date
+  %td!= link_to_unless(followup.complete?,  "complete", mark_complete_followup_path(followup), :method => :put, :class => "complete") do  '' end

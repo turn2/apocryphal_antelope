@@ -1,0 +1,29 @@
+@import colors.sass
+@import mixins.sass
+
+.fieldWithErrors
+  input[type="text"]
+    :border = "1px solid #{!red_four}"
+  label
+    :color = !red_five
+
+#errorExplanation
+  :padding 18px 24px 12px 18px
+  :margin-bottom 24px
+  :background = !red_one
+  :border = "2px solid #{!red_four}"
+  :color = !red_five
+  :width 48%
+
+  h2
+    :margin 0
+    :color #000
+    +serif_fonts
+    :font-weight normal
+    :font-size 1.8em
+  
+  ul li
+    :color #333
+    :font-size 1.2em
+    :margin-top 4px
+    +serif_fonts

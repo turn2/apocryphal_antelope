@@ -1,0 +1,17 @@
+!= render :partial => 'testimonials/header'
+.detail.huge Published Testimonials for Media Tab
+.subtitle Drag and drop to sort
+
+%ul{:id => "testimonials"}
+  - @testimonials.each do |testimonial|
+    %li[testimonial]
+      %span.handle
+        .block.gray.crunched.gargantuan{ :class => :visible }
+          - if testimonial.wholesaler
+            .detail!= link_to testimonial.wholesaler.wholesaler_name, wholesaler_path(testimonial.wholesaler)
+          .description.testimonial= testimonial.quote
+          .detail= testimonial.author 
+        .block.crunched
+          != button_to "Remove from media tab", hide_testimonials_published_testimonial_path(testimonial), :method => :put, :confirm => "Hide this Testimonial from the media tab?"
+        .clear
+!= javascript_include_tag "testimonials"

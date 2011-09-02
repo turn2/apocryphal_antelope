@@ -1,0 +1,11 @@
+#wholesaler_greeting {
+  color: #134758;
+  font-size: 11px;
+  float: left; }
+  #wholesaler_greeting ul {
+    padding-left: 10px;
+    margin-left: 16px; }
+  #wholesaler_greeting .bold {
+    font-weight: bold; }
+  #wholesaler_greeting .larger {
+    font-size: 12px; }

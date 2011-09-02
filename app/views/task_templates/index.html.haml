@@ -1,0 +1,28 @@
+.block
+  .description Index
+  .detail.huge Manage Task Templates
+
+.block
+  .detail!= link_to "Create New Task Template", new_task_template_path
+  .subtitle Create a new task template to automatically generate new tasks for each wholesaler
+
+%table.table.resources#incomplete_tasks
+  %thead
+    %tr
+      %th Title
+      %th Description
+      %th Due Week
+      %th 
+  %tfoot
+    %tr
+      %td Title
+      %td Description
+      %td Due Week
+      %td 
+  %tbody
+    - @task_templates.each do |t|
+      %tr{:id => "task_#{t.id}", :class => cycle("light", "dark", :name => "task_templates")}
+        %td!= link_to t.title, task_template_path(t), :class => "neutral"
+        %td.limit_width!= t.description
+        %td!= t.due_week
+        %td!= link_to "Edit", edit_task_template_path(t)

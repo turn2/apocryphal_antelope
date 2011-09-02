@@ -1,0 +1,24 @@
+.block
+  .description Task Template Title
+  .detail.huge= @task_template.title
+  .subtitle!= link_to "Edit", edit_task_template_path(@task_template)
+.block
+  .description Description:
+  .detail= @task_template.description
+
+.block
+  .description Due Week:
+  .detail= @task_template.due_week
+
+.block.gray
+  %h4.section Delete Task Template
+  .description
+    Delete this task template permanently from the system.
+  .description
+    %strong Warning: this will also delete the individual tasks created for all wholesalers.
+  %br/
+  .detail!= link_to "Delete Task", @task_template, :confirm => 'Are you sure you want to delete this task?  It will be removed for all wholesalers in the system.', :method => :delete, :class => "incomplete"
+  %br/
+
+.block
+  .description!= link_to "&laquo; return to Task Templates", task_templates_path

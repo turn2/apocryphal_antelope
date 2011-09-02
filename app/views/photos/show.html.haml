@@ -1,0 +1,7 @@
+!= link_to image_tag(@photo.picture.url(:medium)), @photo.picture.url(:original)
+%br/
+- if current_user.wholesaler?
+  != link_to "Back to dashboard", dashboard_path
+- else
+  != link_to "Edit Photo", edit_wholesaler_photo_path(@wholesaler, @photo)
+  != link_to "Back to photos", wholesaler_photos_path(@wholesaler)

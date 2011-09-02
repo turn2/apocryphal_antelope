@@ -1,0 +1,11 @@
+.block
+  .description= @wholesaler.wholesaler_name
+  .detail.huge Photos
+
+.block
+  .detail!= link_to "New Photo", new_wholesaler_photo_path(@wholesaler)
+  .subtitle= "Upload a single photo or multiple photos in a .zip file for #{@wholesaler.wholesaler_name}"
+
+#photos
+  - @photos.each do |photo|
+    != render :partial => "photos/thumb", :locals => {:photo => photo }

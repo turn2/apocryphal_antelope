@@ -1,0 +1,16 @@
+- form_for(@task_template) do |f|
+  != f.error_messages
+  .block
+    .description!= f.label :title
+    .detail!= f.text_field :title
+  .block
+    .description!= f.label :description
+    .detail!= f.text_area :description
+  .block
+    .description!= f.label :due_week
+    .detail
+      %span{:id => "Due_Week"}
+        - 10.downto(1).each do |number|
+          != f.label "due_week_#{number}", number
+          != f.radio_button :due_week, number
+  .block!= f.submit "Save"

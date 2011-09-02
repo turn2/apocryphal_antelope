@@ -1,0 +1,5 @@
+%p== #{@users.length} wholesaler account(s) created:
+%ul
+  %li Login: password
+  - @users.each do |user|
+    %li== #{user.email}: #{user.password}

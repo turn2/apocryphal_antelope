@@ -1,0 +1,21 @@
+.block
+  .detail.huge Upload Batch of Wholesalers
+
+.block
+  .description CSVs for importing Wholesalers must consist of the following columns:
+  %ul
+    - CSVImports::WHOLESALER_HEADINGS.each do |heading|
+      %li= heading 
+
+- form_for :import, :url => import_wholesalers_path, :html => {:multipart => true} do |f|
+  .block.gray
+    %h4.section Upload Spreadsheet
+  .block
+    .description If a record in the CSV has an identical Name and Zip to an existing Wholesaler in the system, the existing Wholesaler will be updated with the contents from the CSV.  Formatting of the 'Event date' field in the CSV is important.  Dates should be formatted as 'MM/DD/YYYY' (e.g. '01/31/2010').
+  .block
+    .description!= f.label :upload_csv, "Upload batch"
+    != f.file_field :upload_csv
+  .block.gray
+    != f.submit "Upload"
+    .subtitle Click here to upload the wholesalers from the selected stylesheet into the system
+
